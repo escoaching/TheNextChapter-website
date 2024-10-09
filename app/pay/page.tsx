@@ -60,7 +60,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `/payment-success?amount=${amount}`,
+        return_url: `${window.location.origin}/payment-success?amount=${amount}`,
         payment_method_data: {
           billing_details: {
             name: name,
