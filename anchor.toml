@@ -1,0 +1,10 @@
+[lcl-host]
+realm-apid = 'localhost'
+
+[org]
+apid = 'aoniqq'
+
+[service]
+apid = 'my-website'
+category = 'javascript'
+cert-style = 'acme'
