@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import Image from "next/image";
-import Link from "next/link";
+//import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 const Navbar = () => (
@@ -12,14 +12,14 @@ const Navbar = () => (
         <div className="flex-shrink-0 flex items-center">
           <Image src="/TNCLogo.webp" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
         </div>
-        <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+        {/* <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
           <Link href="/" className="text-white inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-pink-300 text-sm font-medium transition-all">
             Home
           </Link>
           <Link href="/book" className="text-white inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-pink-300 text-sm font-medium transition-all">
             Book Discovery Call
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   </nav>
@@ -32,12 +32,12 @@ const Footer = () => (
         <div className="w-full md:w-1/2 mb-6 md:mb-0">
           <p className="text-lg">Copyright 2024 Recover With Colleen</p>
         </div>
-        <div className="w-full md:w-1/2">
+        {/* <div className="w-full md:w-1/2">
           <ul className="flex flex-wrap justify-end">
             <li className="mr-6 mb-2"><Link href="/" className="hover:text-pink-300 transition-all">Home</Link></li>
             <li className="mb-2"><Link href="/book" className="hover:text-pink-300 transition-all">Book Discovery Call</Link></li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   </footer>
@@ -57,19 +57,33 @@ const PaymentSuccessContent = () => {
         We&apos;re excited to start this journey with you. If you have any questions, please don&apos;t hesitate to reach out.
       </p>
       <h2 className="text-2xl font-semibold mb-4 text-center text-purple-700">Next Steps</h2>
-      <ol className="list-decimal list-inside space-y-2 mb-6">
-        <li>Check your email for a welcome message with important information.</li>
-        <li>Join our private community platform (details in the welcome email).</li>
-        <li>Mark your calendar for our first group coaching call (schedule in the welcome email).</li>
-        <li>Start exploring the resources available in your member&apos;s area.</li>
+      <ol className="list-none space-y-6 mb-8 flex flex-col items-center">
+        <li className="text-center flex flex-col items-center">
+          <div className="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+            <span className="text-2xl font-bold text-purple-600">1</span>
+          </div>
+          <p className="text-lg text-gray-700 max-w-md">Check your email for a welcome message with important information.</p>
+        </li>
+        <li className="text-center flex flex-col items-center">
+          <div className="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+            <span className="text-2xl font-bold text-purple-600">2</span>
+          </div>
+          <p className="text-lg text-gray-700 max-w-md">Join our private community platform (details in the welcome email).</p>
+        </li>
+        <li className="text-center flex flex-col items-center">
+          <div className="bg-purple-100 rounded-full w-12 h-12 flex items-center justify-center mb-3">
+            <span className="text-2xl font-bold text-purple-600">3</span>
+          </div>
+          <p className="text-lg text-gray-700 max-w-md">Mark your calendar for our first group coaching call (details in the welcome email).</p>
+        </li>
       </ol>
       <p className="text-lg mb-6 text-center">
         Remember, you&apos;re not alone on this journey. We&apos;re here to support you every step of the way.
       </p>
       <div className="text-center">
-        <Link href="/" className="inline-block bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors">
+        {/* <Link href="/" className="inline-block bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors">
           Return to Homepage
-        </Link>
+        </Link> */}
       </div>
     </div>
   )
