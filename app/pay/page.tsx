@@ -40,27 +40,31 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       .then((data) => setClientSecret(data.clientSecret))
   }, [amount])
 
+  
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setLoading(true)
-
+    event.preventDefault();
+    setLoading(true);
+  
     if (!stripe || !elements) {
-      return
+      setLoading(false);
+      return;
     }
-
-    const { error: submitError } = await elements.submit()
-
+  
+    const { error: submitError } = await elements.submit();
+  
     if (submitError) {
-      setErrorMessage(submitError.message)
-      setLoading(false)
-      return
+      setErrorMessage(submitError.message);
+      setLoading(false);
+      return;
     }
-
-    const { error } = await stripe.confirmPayment({
+  
+    // Confirm the payment with Stripe
+    const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       clientSecret,
       confirmParams: {
-        return_url: `${window.location.origin}/payment-success?amount=${amount}`,
+        // Provide return_url, required by Stripe for automatic payment methods (cards)
+        return_url: `${window.location.origin}/payment-success`, // Required by Stripe, but handled manually
         payment_method_data: {
           billing_details: {
             name: name,
@@ -69,86 +73,108 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           },
         },
       },
-    })
-
+      redirect: 'if_required', // Only redirect if absolutely necessary (e.g., for 3D Secure)
+    });
+  
     if (error) {
-      setErrorMessage(error.message)
-    } else {
-      // The payment UI automatically closes with a success animation.
-      // Your customer is redirected to your `return_url`.
+      setErrorMessage("Payment failed. Please try again.");
+      setLoading(false);
+      return;
     }
-
-    setLoading(false)
-  }
-
-  if (!clientSecret || !stripe || !elements) {
-    return (
-      <div className="flex items-center justify-center">
-        <div
-          className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
-          role="status"
-        >
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Loading...
-          </span>
-        </div>
-      </div>
-    )
-  }
-
+  
+    // Check if the payment was successful
+    if (paymentIntent && paymentIntent.status === 'succeeded') {
+      // Optionally verify the payment intent on the server side
+      const response = await fetch('/api/payment-confirm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ paymentIntentId: paymentIntent.id }), // Send paymentIntentId to server
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        // Redirect to the payment success page
+        window.location.href = '/payment-success'; // Redirect to the success page
+      } else {
+        setErrorMessage("Payment verification failed. Please try again.");
+      }
+    } else {
+      setErrorMessage("Payment could not be completed. Please try again.");
+    }
+  
+    setLoading(false);
+  };
+  
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-xl">
-      <h2 className="text-3xl font-bold mb-6 text-[#46474d] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Payment Details</h2>
-      
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
-        />
-      </div>
+    <>
+      {loading && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+            <p className="text-lg font-semibold mb-4">Processing your payment...</p>
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      )}
+  
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-xl">
+        <h2 className="text-3xl font-bold mb-6 text-[#46474d] bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Payment Details</h2>
+  
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+          />
+        </div>
+  
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+          />
+        </div>
+  
+        <div className="mb-6">
+          <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+          />
+        </div>
+  
+        {clientSecret && <PaymentElement />}
+  
+        {errorMessage && <div className="text-red-500 mt-4">{errorMessage}</div>}
+  
+        <button
+          disabled={!stripe || loading}
+          className="w-full p-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
+        >
+          {!loading ? `Pay $${amount}` : "Processing..."}
+        </button>
+      </form>
+    </>
+  );
+}  
 
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
-        />
-      </div>
-
-      <div className="mb-6">
-        <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-        <input
-          type="tel"
-          id="phoneNumber"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          required
-          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
-        />
-      </div>
-
-      {clientSecret && <PaymentElement />}
-
-      {errorMessage && <div className="text-red-500 mt-4">{errorMessage}</div>}
-
-      <button
-        disabled={!stripe || loading}
-        className="w-full p-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
-      >
-        {!loading ? `Pay $${amount}` : "Processing..."}
-      </button>
-    </form>
-  )
-}
 
 const FeatureItem = ({ title, description }: { title: string; description: string }) => (
   <div className="mb-6 transform hover:scale-105 transition-all">
@@ -169,16 +195,6 @@ const Navbar = () => (
         <div className="flex-shrink-0 flex items-center">
           <Image src="/TNCLogo.webp" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
         </div>
-        {/* Commented out navigation links
-        <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
-          <Link href="/" className="text-white inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-pink-300 text-sm font-medium transition-all">
-            Home
-          </Link>
-          <Link href="/book" className="text-white inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-pink-300 text-sm font-medium transition-all">
-            Book Discovery Call
-          </Link>
-        </div>
-        */}
       </div>
     </div>
   </nav>
@@ -191,19 +207,10 @@ const Footer = () => (
         <div className="w-full text-center">
           <p className="text-lg">Copyright 2024 Recover With Colleen</p>
         </div>
-        {/* Commented out navigation links
-        <div className="w-full md:w-1/2">
-          <ul className="flex flex-wrap justify-end">
-            <li className="mr-6 mb-2"><Link href="/" className="hover:text-pink-300 transition-all">Home</Link></li>
-            <li className="mb-2"><Link href="/book" className="hover:text-pink-300 transition-all">Book Discovery Call</Link></li>
-          </ul>
-        </div>
-        */}
       </div>
     </div>
   </footer>
 )
-
 
 const TransformationsGrid = () => (
   <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
@@ -234,7 +241,7 @@ const TransformationsGrid = () => (
 )
 
 export default function PayPage() {
-  const amount = 5000
+  const amount = 1
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex flex-col">
@@ -250,9 +257,9 @@ export default function PayPage() {
                   Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
                 </p>
                 <p className="text-2xl font-semibold mb-8 text-purple-600">Get Happy. Not Sober.</p>
-                
+
                 <h2 className="text-3xl font-bold mb-6 text-[#46474d]">THIS PACKAGE INCLUDES THE FOLLOWING</h2>
-                
+
                 <FeatureItem 
                   title="LIVE Group Coaching Calls"
                   description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays available."
@@ -263,19 +270,19 @@ export default function PayPage() {
                 />
                 <FeatureItem 
                   title="The Next Chapter Resource Guide"
-                  description="256-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©. Learn how to apply Colleen's seven core skills of emotional sobriety in all contexts of your life so you become unfuckwithable."
+                  description="256-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
                 />
                 <FeatureItem 
                   title="Audio-only content delivery via secret podcast feed"
-                  description="No more logging into the website and watching videos at your desk. Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking or tasking."
+                  description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
                 />
                 <FeatureItem 
                   title="Community Platform on Voxer"
-                  description="(completely private and not connected to social media) provides you with support 7 days per week. Get coaching, participate in challenges and cultivate friendships as you engage in authentic conversation."
+                  description="(completely private and not connected to social media) provides you with support 7 days per week."
                 />
                 <FeatureItem 
                   title="Bonus Resources"
-                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, daily podcasts, breathwork sessions, detox course, and more."
+                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
                 />
               </div>
             </div>
@@ -297,10 +304,10 @@ export default function PayPage() {
                     By placing an order you are stating that you agree to our Terms & Conditions.
                   </p>
                   <p className="mb-3">
-                    No Refunds: When you join The Next Chapter, you&apos;re hiring me to get the RESULTS you&apos;ve been unable to get on your own. It&apos;s a normal and expected part of the change process to want to quit. We&apos;ll guide you through the resistance and ambivalence with customized support, guidance and accountability.
+                    No Refunds: We will guide you through the resistance and ambivalence with customized support.
                   </p>
                   <p>
-                    Rest assured, I offer a Money Back Guarantee. If you complete 80 percent of the course and are not satisfied with your results, I&apos;ll give you your money back.
+                    If you complete 80% of the course and are not satisfied with your results, I’ll give you your money back.
                   </p>
                 </div>
               </div>

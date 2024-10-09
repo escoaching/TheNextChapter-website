@@ -3,7 +3,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 //import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+
 
 const Navbar = () => (
   <nav className="bg-gradient-to-r from-purple-800 to-pink-800 shadow-lg">
@@ -44,14 +44,12 @@ const Footer = () => (
 );
 
 const PaymentSuccessContent = () => {
-  const searchParams = useSearchParams()
-  const amount = searchParams.get('amount')
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full">
       <h1 className="text-3xl font-bold mb-6 text-center text-purple-800">Payment Successful!</h1>
       <p className="text-xl mb-4 text-center">
-        Thank you for your payment of ${amount}. You&apos;ll receive an email confirmation shortly. If you don&apos;t see it in your inbox, please check your spam folder. If you still can&apos;t find it, please don&apos;t hesitate to contact us.
+        Thank you for your payment. You&apos;ll receive an invoice via email shortly. If you don&apos;t see it in your inbox, please check your spam folder. If you still can&apos;t find it, please don&apos;t hesitate to contact us.
       </p>
       <p className="text-lg mb-6 text-center">
         We&apos;re excited to start this journey with you. If you have any questions, please don&apos;t hesitate to reach out.
