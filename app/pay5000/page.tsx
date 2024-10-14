@@ -254,7 +254,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 1
+  const amount = 5000
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex flex-col">
