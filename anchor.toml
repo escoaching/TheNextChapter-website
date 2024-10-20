@@ -5,6 +5,6 @@ realm-apid = 'localhost'
 apid = 'aoniqq'
 
 [service]
-apid = 'my-website'
+apid = 'TheNextChapter-website'
 category = 'javascript'
 cert-style = 'acme'
