@@ -2,6 +2,8 @@
 
 import React, { Suspense } from "react";
 import Image from "next/image";
+import Link from 'next/link'
+
 
 const Navbar = () => (
   <nav className="bg-[#46474c] shadow-lg">
@@ -16,15 +18,38 @@ const Navbar = () => (
 );
 
 const Footer = () => (
-  <footer className="bg-[#46474c] text-[#fff8f7] py-12">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap justify-between">
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
-          <p className="text-lg">Copyright 2024 Recover With Colleen</p>
+  <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-6 md:mb-0 order-2 md:order-1">
+        <div className="flex justify-center md:justify-start space-x-6">
+          <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
+            <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
+            <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
+            <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
+            <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
         </div>
+        <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Recover With Colleen</p>
+      </div>
+      <div className="order-1 md:order-2 mb-6 md:mb-0">
+        <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+
+          <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">About TNC</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 );
 
 const PaymentSuccessContent = () => {

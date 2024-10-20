@@ -10,16 +10,18 @@ const Navbar = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between h-20">
         <div className="flex-shrink-0 flex items-center">
-          <Image src="/TNCLogo.webp" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
+        <Link href="/" className="flex-shrink-0 flex items-center">
+            <Image src="/TNCLogo.webp" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
+          </Link>
         </div>
         <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
           <Link href="/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
             Home
           </Link>
-          <Link href="/about" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
-            About
+          <Link href="/about-TNC" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
+            About TNC
           </Link>
-          <Link href="/book" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
+          <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
             Book Discovery Call
           </Link>
         </div>
@@ -29,22 +31,38 @@ const Navbar = () => (
 )
 
 const Footer = () => (
-  <footer className="bg-[#46474c] text-[#fff8f7] py-12">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap justify-between">
-        <div className="w-full md:w-1/2 mb-6 md:mb-0">
-          <p className="text-lg">Copyright 2024 The Next Chapter</p>
+  <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-6 md:mb-0 order-2 md:order-1">
+        <div className="flex justify-center md:justify-start space-x-6">
+          <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
+            <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
+            <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
+            <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
+          <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
+            <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+          </Link>
         </div>
-        <div className="w-full md:w-1/2">
-          <ul className="flex flex-wrap justify-end">
-            <li className="mr-6 mb-2"><Link href="/" className="hover:text-[#bda5a3] transition-all">Home</Link></li>
-            <li className="mr-6 mb-2"><Link href="/about" className="hover:text-[#bda5a3] transition-all">About</Link></li>
-            <li className="mb-2"><Link href="/book" className="hover:text-[#bda5a3] transition-all">Book Discovery Call</Link></li>
-          </ul>
-        </div>
+        <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Recover With Colleen</p>
+      </div>
+      <div className="order-1 md:order-2 mb-6 md:mb-0">
+        <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+
+          <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">About TNC</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
+        </ul>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 )
 
 const FoundationsOfEmotionalSobrietyPage = () => {
