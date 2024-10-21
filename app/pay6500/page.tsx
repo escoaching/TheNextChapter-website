@@ -307,7 +307,7 @@ export default function PayPage() {
                 />
                 <FeatureItem 
                   title="The Next Chapter Resource Guide"
-                  description="256-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
+                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
                 />
                 <FeatureItem 
                   title="Audio-only content delivery via secret podcast feed"
