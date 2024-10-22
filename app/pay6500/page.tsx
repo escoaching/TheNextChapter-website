@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from 'next/link'
+import Head from 'next/head'
 
 import {
   useStripe,
@@ -217,7 +218,6 @@ const Footer = () => (
       </div>
       <div className="order-1 md:order-2 mb-6 md:mb-0">
         <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
-
           <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
           <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
           <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
@@ -282,6 +282,15 @@ export default function PayPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex flex-col">
+      <Head>
+        <title>The Next Chapter 1-YEAR CONTAINER</title>
+        <meta property="og:title" content="The Next Chapter 1-YEAR CONTAINER" />
+        <meta property="og:description" content="Evidence-based brain training for professional women who want to reduce their drinking by 80 percent." />
+        <meta property="og:image" content="/TNC1Year.webp" />
+        <meta property="og:url" content="https://emotionalsobrietycoaching.com/pay6500" />
+        <meta property="og:type" content="website" />
+      </Head>
+      
       <Navbar />
       
       <main className="flex-grow">
@@ -291,6 +300,7 @@ export default function PayPage() {
               <div>
                 <h1 className="text-5xl font-bold mb-6 text-[#bda5a3]">The Next Chapter 1-YEAR CONTAINER</h1>
                 <p className="mb-6 text-[#46474c] text-lg">
+                  
                   Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
                 </p>
                 <p className="text-2xl font-semibold mb-8 text-[#bda5a3]">Get Happy. Not Sober.</p>
