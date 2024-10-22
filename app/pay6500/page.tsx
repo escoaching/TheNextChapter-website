@@ -286,7 +286,7 @@ export default function PayPage() {
         <title>The Next Chapter 1-YEAR CONTAINER</title>
         <meta property="og:title" content="The Next Chapter 1-YEAR CONTAINER" />
         <meta property="og:description" content="Evidence-based brain training for professional women who want to reduce their drinking by 80 percent." />
-        <meta property="og:image" content="/TNC1Year.webp" />
+        <meta property="og:image" content="https://emotionalsobrietycoaching.com/TNC1Year.webp" />
         <meta property="og:url" content="https://emotionalsobrietycoaching.com/pay6500" />
         <meta property="og:type" content="website" />
       </Head>
