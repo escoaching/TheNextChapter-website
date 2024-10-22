@@ -284,11 +284,33 @@ export default function PayPage() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex flex-col">
       <Head>
         <title>The Next Chapter 1-YEAR CONTAINER</title>
+        <meta name="description" content="Evidence-based brain training for professional women who want to reduce their drinking by 80 percent." />
+        <link rel="canonical" href="https://emotionalsobrietycoaching.com/pay6500" />
+        
         <meta property="og:title" content="The Next Chapter 1-YEAR CONTAINER" />
         <meta property="og:description" content="Evidence-based brain training for professional women who want to reduce their drinking by 80 percent." />
         <meta property="og:image" content="https://emotionalsobrietycoaching.com/TNC1Year.webp" />
         <meta property="og:url" content="https://emotionalsobrietycoaching.com/pay6500" />
         <meta property="og:type" content="website" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Next Chapter 1-YEAR CONTAINER" />
+        
+        <meta name="twitter:description" content="Evidence-based brain training for professional women who want to reduce their drinking by 80 percent." />
+        <meta name="twitter:image" content="https://emotionalsobrietycoaching.com/TNC1Year.webp" />
+        
+        <meta name="apple-mobile-web-app-title" content="The Next Chapter 1-YEAR CONTAINER" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       
       <Navbar />
@@ -300,7 +322,6 @@ export default function PayPage() {
               <div>
                 <h1 className="text-5xl font-bold mb-6 text-[#bda5a3]">The Next Chapter 1-YEAR CONTAINER</h1>
                 <p className="mb-6 text-[#46474c] text-lg">
-                  
                   Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
                 </p>
                 <p className="text-2xl font-semibold mb-8 text-[#bda5a3]">Get Happy. Not Sober.</p>
