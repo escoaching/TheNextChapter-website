@@ -330,7 +330,7 @@ export default function PayPage() {
 
                 <FeatureItem 
                   title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays available."
+                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
                 />
                 <FeatureItem 
                   title="Small Group Accountability calls"

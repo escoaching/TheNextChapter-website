@@ -299,7 +299,7 @@ export default function PayPage() {
 
                 <FeatureItem 
                   title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays available."
+                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
                 />
                 <FeatureItem 
                   title="Small Group Accountability calls"
@@ -307,7 +307,7 @@ export default function PayPage() {
                 />
                 <FeatureItem 
                   title="The Next Chapter Resource Guide"
-                  description="256-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
+                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
                 />
                 <FeatureItem 
                   title="Audio-only content delivery via secret podcast feed"
