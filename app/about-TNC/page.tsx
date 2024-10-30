@@ -544,7 +544,7 @@ const AboutPage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Link href="/https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
                 Ready To Change? Click Here.
               </Link>
             </div>
