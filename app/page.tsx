@@ -21,9 +21,13 @@ const Navbar = () => {
             <Link href="/about-TNC" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
              Program
             </Link>
+            <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              Podcast
+            </Link>
             <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
               Book Discovery Call
             </Link>
+      
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -174,24 +178,6 @@ const EmotionalSobrietySection = () => (
   </div>
 )
 
-const FreeMasterclass = () => (
-  <div className="bg-gradient-to-r from-[#fff8f7] to-[#bda5a3] py-16">
-    <div className="max-w-4xl mx-auto  px-4 sm:px-6 lg:px-8 text-center">
-      {/* Commented out content */}
-      {/* 
-      <h2 className="text-2xl md:text-4xl font-bold mb-8 text-[#46474c]">IT'S TIME TO BREAK THROUGH THE FEAR, CONFUSION & DOUBT THAT'S BEEN HOLDING YOU BACK SO THAT YOU CAN FINALLY...</h2>
-      <h3 className="text-3xl md:text-5xl font-bold mb-8 text-[#46474c]">Get Happy. Not Sober.</h3>
-      <h4 className="text-2xl md:text-3xl font-semibold mb-8 text-[#bda5a3]">FREE MASTERCLASS TRAINING</h4>
-      <p className="text-base md:text-xl mb-8 text-[#46474c]">Learn the 8 core principles of the Accelerated Recovery Process© so you can break your emotional attachment to alcohol. Because happy people don't drink themselves into a stupor. When you feel like a normal person, you can drink (and not drink) like a normal person.</p>
-      <Link href="/masterclass" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
-        GET INSTANT ACCESS NOW
-        <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-      </Link>
-      */}
-    </div>
-  </div>
-)
-
 const AboutColleen = () => (
   <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fff8f7] to-[#bda5a3]">
     <div className="max-w-4xl mx-auto">
@@ -288,7 +274,6 @@ export default function HomePage() {
       <EmotionalSobrietyCourse />
       <AlcoholProblemSection />
       <EmotionalSobrietySection />
-      <FreeMasterclass />
       <AboutColleen />
       <TransformationsGrid />
       <Footer />
