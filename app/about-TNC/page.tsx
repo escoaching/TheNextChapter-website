@@ -1,31 +1,61 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Check, X, ChevronRight} from 'lucide-react'
+import { ArrowRight, Check, X, ChevronRight, Menu } from 'lucide-react'
 
-const Navbar = () => (
-  <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between h-20">
-        <div className="flex-shrink-0 flex items-center">
-          <Link href="/" className="flex-shrink-0 flex items-center">
-            <Image src="/TNCLogo.webp" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
-          </Link>
-        </div>
-        <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
-          <Link href="/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
-            Home
-          </Link>
-          <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#bda5a3] text-sm font-medium transition-all">
-            Book Discovery Call
-          </Link>
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/logonew.png" alt="TNC Logo" width={200} height={60} className="transform hover:scale-105 transition-all" />
+            </Link>
+          </div>
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              Podcast
+            </Link>
+            <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              Book Discovery Call
+            </Link>
+      
+          </div>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#fff8f7] hover:text-[#90CAD6] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-)
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+            Podcast
+            </Link>
+            <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+              Book Discovery Call
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}
+
 
 const Footer = () => (
   <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
@@ -65,9 +95,12 @@ const AboutPage = () => {
     <div className="min-h-screen bg-[#fff8f7]">
       <Navbar />
 
-      <main className="pt-5"> {/* Add padding-top here */}
-        {/* Hero Section */}
+      <main className="pt-1"> 
+
         <section className="bg-[#fdf3ef] py-16 px-4 md:px-8 lg:px-16"> 
+        <div className="text-center mt-8">
+          <Image src="/TNCLOGOGRAY.png" alt="The Next Chapter Logo" width={700} height={700} className="mx-auto" />
+        </div>
           <div className="max-w-7xl mx-auto">
             <p className="text-xl md:text-2xl text-center italic mb-2">
               Do you drink more than you should?
@@ -343,7 +376,7 @@ const AboutPage = () => {
                 { number: 8, title: "Identity", description: "You only do, think or feel things that align with your beliefs about who you think you are. Trying to earn or prove your worthiness will eventually cause you to act like someone who doesn't deserve it. Learn to BE the person you want to be FIRST... so you can DO what you need to do." }
               ].map((item, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md relative">
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#ff6b6b] text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-bold">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#90CAD6] text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-bold">
                     {item.number}
                   </div>
                   <h3 className="text-xl font-bold mb-2 mt-4">{item.title}</h3>
@@ -563,9 +596,9 @@ const AboutPage = () => {
         <p className="text-center font-semibold mb-12">Here&apos;s what&apos;s included.</p>
 
         <div className="flex flex-col lg:flex-row items-start gap-12">
-          <div className="lg:w-1/2 space-y-8">
+          <div className="lg:w-1/2 space-y-8 text-center">
            
-            <p className="text-center text-xl font-semibold">Immersive, high-touch coaching with Colleen</p>
+            <p className="text-2xl font-semibold mb-4">Immersive, high-touch coaching with Colleen</p>
             <ul className="space-y-4">
               {[
                 "Two group coaching calls each week with Colleen for guidance, support and accountability. Never miss a call... Replays available.",
@@ -577,8 +610,7 @@ const AboutPage = () => {
                 "Small group setting to facilitate connection and friendships",
                 "Free access to bonus workshops, and classes"
               ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-2xl font-bold mr-2">+</span>
+                <li key={index} className="flex items-start justify-center">
                   <span>{item}</span>
                 </li>
               ))}
@@ -593,7 +625,7 @@ const AboutPage = () => {
               height={400}
               className="rounded-lg shadow-xl"
             />
-          </div>
+          </div> 
         </div>
       </div>
     </section>
@@ -624,14 +656,14 @@ const AboutPage = () => {
             <p className="text-xl mb-8 text-center max-w-3xl mx-auto text-[#46474c]">Hiring me as your coach and going all in on The Next Chapter is literally how you buy happiness*.</p>
             <p className="text-lg mb-8 text-center max-w-3xl mx-auto text-[#46474c]">*Assembly required. 🛠️👷🏼‍♀️</p>
             <div className="flex justify-center">
-              <div className="bg-gradient-to-r from-[#fff8f7] to-[#bda5a3] p-8 rounded-lg shadow-xl max-w-2xl mx-auto text-center">
-                <h3 className="text-2xl font-bold mb-4 text-[#46474c]">What&apos;s the alternative?</h3>
-                <p className="text-lg mb-4 text-[#46474c]">How much will it cost if you:</p>
+              <div className="bg-[#90CAD6] p-12 rounded-lg shadow-xl max-w-3xl mx-auto text-center">
+                <h3 className="text-4xl font-bold mb-4 text-[#46474c]">What&apos;s the alternative?</h3>
+                <p className="text-xl italic mb-4 text-[#46474c]">How much will it cost if you:</p>
                 <ul className="list-none p-0 mb-6 text-[#46474c]">
-                  <li>Lose your job and/or respect of family because you can&apos;t control your drinking?</li>
-                  <li>Spend another decade of your life repeating the same mistakes?</li>
-                  <li>Have to pay legal fees or health expenses to cover drinking-related problems?</li>
-                  <li>Waste your one precious life because you&apos;re trapped in stupid habits that don&apos;t even make you happy?</li>
+                  <li>1. Lose your job and/or respect of family because you can&apos;t control your drinking?</li>
+                  <li>2. Spend another decade of your life repeating the same mistakes?</li>
+                  <li>3. Have to pay legal fees or health expenses to cover drinking-related problems?</li>
+                  <li>4. Waste your one precious life because you&apos;re trapped in stupid habits that don&apos;t even make you happy?</li>
                 </ul>
                 <p className="text-lg font-bold text-[#46474c]">Where do you want to be one year from now?</p>
               </div>

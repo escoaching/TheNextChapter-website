@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <Image src="/TNCLogo.webp" alt="TNC Logo" width={150} height={60} className="transform hover:scale-105 transition-all" />
+              <Image src="/logonew.png" alt="TNC Logo" width={200} height={60} className="transform hover:scale-105 transition-all" />
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-8">
@@ -48,6 +48,9 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/about-TNC" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
             Program
+            </Link>
+            <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+            Podcast
             </Link>
             <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
               Book Discovery Call
@@ -163,14 +166,14 @@ const EmotionalSobrietySection = () => (
           <p className="text-base md:text-lg mb-6 text-[#46474c]">Emotional sobriety is when you deal with life as is instead of how you think it should be.</p>
           <p className="text-base md:text-lg mb-6 text-[#46474c]">You just need to learn how to respect your own intuition. So you feel safe with yourself--with or without a drink in your hand.</p>
           <div className="text-center mt-8">
-            <p className="text-lg md:text-xl font-semibold mb-2 text-[#46474c]">That&apos;s it.</p>
-            <ul className="list-none text-base md:text-lg text-[#46474c]">
+            <p className="text-lg md:text-xl font-semibold mb-2 text-[#46474c] text-left">That&apos;s it.</p>
+            <ul className="list-none text-base md:text-lg text-[#46474c] text-left">
               <li>Take a breath.</li>
               <li>Allow yourself to feel.</li>
               <li>Have self-compassion.</li>
               <li>Set boundaries and realistic expectations.</li>
             </ul>
-            <p className="text-lg md:text-xl font-semibold mt-4 text-[#46474c]">This is an invitation to recover YOU.</p>
+            <p className="text-lg md:text-xl font-semibold mt-4 text-[#46474c] text-left">This is an invitation to recover YOU.</p>
           </div>
         </div>
       </div>
