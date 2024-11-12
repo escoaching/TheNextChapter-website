@@ -254,7 +254,7 @@ const Footer = () => (
             <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
           </Link>
         </div>
-        <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Recover With Colleen</p>
+        <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Emotional Sobriety Coaching</p>
       </div>
       <div className="order-1 md:order-2 mb-6 md:mb-0">
         <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
