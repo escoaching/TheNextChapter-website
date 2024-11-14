@@ -13,7 +13,6 @@ const meta = {
   pageUrl: "https://www.emotionalsobrietycoaching.com"
 }
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -143,9 +142,11 @@ const PasswordProtectedContent = ({ children }: { children: React.ReactNode }) =
 
   return <>{children}</>
 }
-//comment for redploy
 
 export default function ProgramResourcesPage() {
+ 
+  const pdfGoogleDriveLink = "https://drive.google.com/file/d/1UATB-_E53c-J8ibG8cBYpOtv1EllgUSl/view?usp=sharing"
+
   return (
     <PasswordProtectedContent>
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 to-pink-50">
@@ -160,15 +161,16 @@ export default function ProgramResourcesPage() {
               <div className="mb-4 flex flex-col sm:flex-row items-center justify-between">
                 <div className="flex space-x-4">
                   <a
-                    href="/Workbook.pdf"
-                    download
+                    href={pdfGoogleDriveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center bg-[#bda5a3] text-[#fff8f7] px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#46474c] transition-colors transform hover:scale-105"
                   >
                     <FileDown className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                     Download
                   </a>
                   <a
-                    href="/Workbook.pdf"
+                    href={pdfGoogleDriveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-[#bda5a3] text-[#fff8f7] px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#46474c] transition-colors transform hover:scale-105"
@@ -179,10 +181,13 @@ export default function ProgramResourcesPage() {
                 </div>
               </div>
               <div className="border border-gray-200 rounded-lg p-2 sm:p-4">
-                <iframe
-                  src="/Workbook.pdf"
-                  className="w-full h-[400px] sm:h-[600px] md:h-[800px] lg:h-[1000px] rounded-lg"
-                  title="TNC Workbook"
+                <Image
+                  src="/Workbook.png"
+                  alt="TNC Workbook Preview"
+                  width={800}
+                  height={600}
+                  layout="responsive"
+                  className="rounded-lg"
                 />
               </div>
             </div>
