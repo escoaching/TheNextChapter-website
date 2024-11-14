@@ -4,6 +4,16 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import MetaComponent from '../MetaComponent'
+
+
+
+const meta = {
+  title: "Foundations of Emotional Sobriety | Emotional Sobriety Coaching",
+  description:"The next chapter is a program centered around emotional sobriety. Get happy, not sober. Reduce your alcohol consumption by 80%.",
+  imageUrl:"https://www.emotionalsobrietycoaching.com/foundationsofemotional.webp",
+  pageUrl:"https://www.emotionalsobrietycoaching.com/Foundations-of-Emotional-Sobriety"
+}
 
 const Navbar = () => (
   <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
@@ -67,82 +77,85 @@ const Footer = () => (
 
 const FoundationsOfEmotionalSobrietyPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
-      <Navbar />
+    <>
+      <MetaComponent  {...meta}/>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
+        <Navbar />
 
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#bda5a3] leading-tight">Reclaim control of your head, heart and home.</h1>
-            <p className="text-xl md:text-2xl mb-8 text-[#46474c]">Get started with my free audio course!</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#bda5a3]">Welcome to<br />Foundations of Emotional Sobriety</h2>
-            <Link 
-              href="https://app.helloaudio.fm/feed/f37e8677-56fd-451b-8d28-f96efbb71bde/signup" 
-              className="bg-[#bda5a3] text-[#fff8f7] hover:bg-[#46474c] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Click here for immediate access to the private podcast feed
-              <ArrowRight className="ml-2" />
-            </Link>
-          </div>
-        </section>
+        <main className="pt-20">
+          {/* Hero Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#bda5a3] leading-tight">Reclaim control of your head, heart and home.</h1>
+              <p className="text-xl md:text-2xl mb-8 text-[#46474c]">Get started with my free audio course!</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#bda5a3]">Welcome to<br />Foundations of Emotional Sobriety</h2>
+              <Link 
+                href="https://app.helloaudio.fm/feed/f37e8677-56fd-451b-8d28-f96efbb71bde/signup" 
+                className="bg-[#bda5a3] text-[#fff8f7] hover:bg-[#46474c] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Click here for immediate access to the private podcast feed
+                <ArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </section>
 
-        {/* What is Emotional Sobriety Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#bda5a3]">What is Emotional Sobriety?</h2>
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-              <div className="lg:w-1/2 max-w-lg">
-                <Image 
-                  src="/foundationsofemotional.webp" 
-                  alt="Foundations of Emotional Sobriety" 
-                  width={600} 
-                  height={600} 
-                  className="rounded-lg shadow-2xl transform hover:scale-105 transition-all"
-                />
-              </div>
-              <div className="lg:w-1/2 max-w-lg">
-                <p className="text-xl mb-4 leading-relaxed text-[#46474c]">When you&apos;re no longer intoxicated by bullshit--your own or anyone else&apos;s.</p>
-                <p className="text-xl mb-4 leading-relaxed text-[#46474c]">&quot;Stuck&quot; is a feeling, not a fact. Stop waiting for permission, approval or for life circumstances to improve so that you can feel powerful.</p>
-                <p className="text-xl mb-4 leading-relaxed text-[#46474c]">Learn how to clear the emotional obstacles so you can be powerful NOW--as you are, where you are.</p>
-                <p className="text-2xl font-bold text-[#bda5a3]">Because powerful people live powerful lives.</p>
+          {/* What is Emotional Sobriety Section */}
+          <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#bda5a3]">What is Emotional Sobriety?</h2>
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+                <div className="lg:w-1/2 max-w-lg">
+                  <Image 
+                    src="/foundationsofemotional.webp" 
+                    alt="Foundations of Emotional Sobriety" 
+                    width={600} 
+                    height={600} 
+                    className="rounded-lg shadow-2xl transform hover:scale-105 transition-all"
+                  />
+                </div>
+                <div className="lg:w-1/2 max-w-lg">
+                  <p className="text-xl mb-4 leading-relaxed text-[#46474c]">When you&apos;re no longer intoxicated by bullshit--your own or anyone else&apos;s.</p>
+                  <p className="text-xl mb-4 leading-relaxed text-[#46474c]">&quot;Stuck&quot; is a feeling, not a fact. Stop waiting for permission, approval or for life circumstances to improve so that you can feel powerful.</p>
+                  <p className="text-xl mb-4 leading-relaxed text-[#46474c]">Learn how to clear the emotional obstacles so you can be powerful NOW--as you are, where you are.</p>
+                  <p className="text-2xl font-bold text-[#bda5a3]">Because powerful people live powerful lives.</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Owner's Manual Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#bda5a3]">Foundations of Emotional Sobriety is the owner&apos;s manual for your mind and body.</h2>
-            <p className="text-xl mb-8 text-[#46474c]">Get the tools, tips and strategies to:</p>
-            <ul className="text-left max-w-2xl mx-auto space-y-6 mb-12">
-              <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
-                <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
-                <span className="text-lg text-[#46474c]">Separate fact from fiction so you can figure out…what else could be true?</span>
-              </li>
-              <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
-                <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
-                <span className="text-lg text-[#46474c]">Change habitual thought patterns with self-coaching strategies that expand your perspective and shift your focus from past to future.</span>
-              </li>
-              <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
-                <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
-                <span className="text-lg text-[#46474c]">Regulate your nervous system and process your emotions in real time so you&apos;re no longer held hostage by anxiety.</span>
-              </li>
-            </ul>
-            <Link 
-              href="https://app.helloaudio.fm/feed/f37e8677-56fd-451b-8d28-f96efbb71bde/signup" 
-              className="bg-[#bda5a3] text-[#fff8f7] hover:bg-[#46474c] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Click here for immediate access to free audio course!
-              <ArrowRight className="ml-2" />
-            </Link>
-          </div>
-        </section>
-      </main>
+          {/* Owner's Manual Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#bda5a3]">Foundations of Emotional Sobriety is the owner&apos;s manual for your mind and body.</h2>
+              <p className="text-xl mb-8 text-[#46474c]">Get the tools, tips and strategies to:</p>
+              <ul className="text-left max-w-2xl mx-auto space-y-6 mb-12">
+                <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
+                  <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
+                  <span className="text-lg text-[#46474c]">Separate fact from fiction so you can figure out…what else could be true?</span>
+                </li>
+                <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
+                  <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
+                  <span className="text-lg text-[#46474c]">Change habitual thought patterns with self-coaching strategies that expand your perspective and shift your focus from past to future.</span>
+                </li>
+                <li className="flex items-start bg-[#fff8f7] p-4 rounded-lg shadow-md">
+                  <span className="text-3xl mr-4 flex-shrink-0">👉🏼</span>
+                  <span className="text-lg text-[#46474c]">Regulate your nervous system and process your emotions in real time so you&apos;re no longer held hostage by anxiety.</span>
+                </li>
+              </ul>
+              <Link 
+                href="https://app.helloaudio.fm/feed/f37e8677-56fd-451b-8d28-f96efbb71bde/signup" 
+                className="bg-[#bda5a3] text-[#fff8f7] hover:bg-[#46474c] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Click here for immediate access to free audio course!
+                <ArrowRight className="ml-2" />
+              </Link>
+            </div>
+          </section>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 

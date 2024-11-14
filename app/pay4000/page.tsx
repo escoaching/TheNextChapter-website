@@ -13,6 +13,15 @@ import {
 import { loadStripe } from "@stripe/stripe-js"
 import convertToSubcurrency from "@/lib/convertToSubcurrency"
 import { CheckCircle } from "lucide-react"
+import MetaComponent from "../MetaComponent"
+
+
+const meta = {
+  title: "The Next Chapter 1-YEAR CONTAINER",
+  description:"Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  imageUrl:"https://emotionalsobrietycoaching.com/Opengraph.png",
+  pageUrl:"https://emotionalsobrietycoaching.com/pay4000"
+}
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined")
@@ -105,6 +114,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   
   return (
     <>
+      <MetaComponent  {...meta}/>
       {loading && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
