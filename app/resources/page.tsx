@@ -160,7 +160,7 @@ export default function ProgramResourcesPage() {
               <div className="mb-4 flex flex-col sm:flex-row items-center justify-between">
                 <div className="flex space-x-4">
                   <a
-                    href="/workbook2024.pdf"
+                    href="/Workbook.pdf"
                     download
                     className="flex items-center bg-[#bda5a3] text-[#fff8f7] px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#46474c] transition-colors transform hover:scale-105"
                   >
@@ -168,7 +168,7 @@ export default function ProgramResourcesPage() {
                     Download
                   </a>
                   <a
-                    href="/workbook2024.pdf"
+                    href="/Workbook.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-[#bda5a3] text-[#fff8f7] px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-[#46474c] transition-colors transform hover:scale-105"
@@ -180,7 +180,7 @@ export default function ProgramResourcesPage() {
               </div>
               <div className="border border-gray-200 rounded-lg p-2 sm:p-4">
                 <iframe
-                  src="/workbook2024.pdf"
+                  src="/Workbook.pdf"
                   className="w-full h-[400px] sm:h-[600px] md:h-[800px] lg:h-[1000px] rounded-lg"
                   title="TNC Workbook"
                 />
