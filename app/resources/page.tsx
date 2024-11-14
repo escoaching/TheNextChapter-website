@@ -112,7 +112,7 @@ const PasswordProtectedContent = ({ children }: { children: React.ReactNode }) =
       setIsAuthenticated(true)
       setError('')
     } else {
-      setError('Incorrect password. Please try again.')
+      setError('Incorrect password. Please try again or reach out to the team for assistance')
     }
   }
 
