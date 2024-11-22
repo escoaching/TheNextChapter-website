@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from 'next/link'
-// import Head from 'next/head'
-
 import {
   useStripe,
   useElements,
@@ -13,14 +11,14 @@ import {
 } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import convertToSubcurrency from "@/lib/convertToSubcurrency"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, X, Menu } from 'lucide-react'
 import MetaComponent from "../MetaComponent"
 
 const meta = {
   title: "The Next Chapter 1-YEAR CONTAINER",
-  description:"Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
-  imageUrl:"https://emotionalsobrietycoaching.com/test.png",
-  pageUrl:"https://emotionalsobrietycoaching.com/pay6500"
+  description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  imageUrl: "https://emotionalsobrietycoaching.com/test.png",
+  pageUrl: "https://emotionalsobrietycoaching.com/pay6500"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
@@ -37,6 +35,14 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   const [email, setEmail] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [name, setName] = useState("")
+  const [address, setAddress] = useState({
+    line1: "",
+    line2: "",
+    city: "",
+    state: "",
+    postal_code: "",
+    country: "",
+  })
 
   useEffect(() => {
     fetch("/api/create-payment-intent", {
@@ -77,6 +83,14 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
             name: name,
             email: email,
             phone: phoneNumber,
+            address: {
+              line1: address.line1,
+              line2: address.line2,
+              city: address.city,
+              state: address.state,
+              postal_code: address.postal_code,
+              country: address.country,
+            },
           },
         },
       },
@@ -143,6 +157,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium text-[#46474c] mb-1">Email Address</label>
+          <p className="text-sm text-[#46474c] mb-1">Please use the same email you have used for all other The Next Chapter communications.</p>
           <input
             type="email"
             id="email"
@@ -153,13 +168,84 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           />
         </div>
   
-        <div className="mb-6">
+        <div className="mb-4">
           <label htmlFor="phoneNumber" className="block text-sm font-medium text-[#46474c] mb-1">Phone Number</label>
           <input
             type="tel"
             id="phoneNumber"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="address1" className="block text-sm font-medium text-[#46474c] mb-1">Address Line 1</label>
+          <input
+            type="text"
+            id="address1"
+            value={address.line1}
+            onChange={(e) => setAddress({...address, line1: e.target.value})}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="address2" className="block text-sm font-medium text-[#46474c] mb-1">Address Line 2 (Optional)</label>
+          <input
+            type="text"
+            id="address2"
+            value={address.line2}
+            onChange={(e) => setAddress({...address, line2: e.target.value})}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="city" className="block text-sm font-medium text-[#46474c] mb-1">City</label>
+          <input
+            type="text"
+            id="city"
+            value={address.city}
+            onChange={(e) => setAddress({...address, city: e.target.value})}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="state" className="block text-sm font-medium text-[#46474c] mb-1">State</label>
+          <input
+            type="text"
+            id="state"
+            value={address.state}
+            onChange={(e) => setAddress({...address, state: e.target.value})}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="postalCode" className="block text-sm font-medium text-[#46474c] mb-1">Postal Code</label>
+          <input
+            type="text"
+            id="postalCode"
+            value={address.postal_code}
+            onChange={(e) => setAddress({...address, postal_code: e.target.value})}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
+          />
+        </div>
+
+        <div className="mb-6">
+          <label htmlFor="country" className="block text-sm font-medium text-[#46474c] mb-1">Country</label>
+          <input
+            type="text"
+            id="country"
+            value={address.country}
+            onChange={(e) => setAddress({...address, country: e.target.value})}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#bda5a3] focus:border-[#bda5a3]"
           />
@@ -178,7 +264,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       </form>
     </>
   );
-}  
+}
 
 const FeatureItem = ({ title, description }: { title: string; description: string }) => (
   <div className="mb-6 transform hover:scale-105 transition-all">
@@ -192,50 +278,88 @@ const FeatureItem = ({ title, description }: { title: string; description: strin
   </div>
 )
 
-const Navbar = () => (
-  <nav className="bg-[#46474c] shadow-lg">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between h-20">
-        <div className="flex-shrink-0 flex items-center">
-          <Image src="/logonew.png" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/logonew.png" alt="TNC Logo" width={200} height={60} className="transform hover:scale-105 transition-all" />
+            </Link>
+          </div>
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <Link href="/about-TNC" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              Program
+            </Link>
+            <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              Podcast
+            </Link>
+          </div>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-[#fff8f7] hover:text-[#90CAD6] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-)
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <Link href="/about-TNC" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+              Program
+            </Link>
+            <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+              Podcast
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}
 
 const Footer = () => (
   <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col md:flex-row justify-between items-center">
-      <div className="mb-6 md:mb-0 order-2 md:order-1">
-        <div className="flex justify-center md:justify-start space-x-6">
-          <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
-            <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
-            <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
-            <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="mb-6 md:mb-0 order-2 md:order-1">
+          <div className="flex justify-center md:justify-start space-x-6">
+            <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
+              <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
+              <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
+              <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
+              <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+          </div>
+          <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Emotional Sobriety Coaching</p>
         </div>
-        <p className="text-sm md:text-base mt-4 text-center md:text-left">Copyright 2024 Emotional Sobriety Coaching</p>
-      </div>
-      <div className="order-1 md:order-2 mb-6 md:mb-0">
-        <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
-          <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
-        </ul>
+        <div className="order-1 md:order-2 mb-6 md:mb-0">
+          <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+            <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 )
 
 const TransformationsGrid = () => (
@@ -293,7 +417,7 @@ export default function PayPage() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex flex-col">
       <Navbar />
       
-      <main className="flex-grow">
+      <main className="flex-grow mt-20">
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between">
