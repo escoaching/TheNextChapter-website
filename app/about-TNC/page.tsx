@@ -33,7 +33,7 @@ const Navbar = () => {
               <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Podcast
               </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Book Discovery Call
               </Link>
         
@@ -58,7 +58,7 @@ const Navbar = () => {
               <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
               Podcast
               </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
                 Book Discovery Call
               </Link>
             </div>
@@ -94,7 +94,7 @@ const Footer = () => (
         <div className="order-1 md:order-2 mb-6 md:mb-0">
           <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
             <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
-            <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
             <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
           </ul>
         </div>
@@ -152,7 +152,7 @@ const AboutPage = () => {
                 </p>
                 <div className="text-center md:text-left">
                   <Link
-                    href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL"
+                    href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website"
                     className="bg-black text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-gray-800 transition-colors inline-block"
                   >
                     Click Here To Apply!
@@ -264,7 +264,7 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="mt-12 text-center">
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-black text-white font-bold py-4 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="bg-black text-white font-bold py-4 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
                 Click HERE to apply
               </Link>
             </div>
@@ -452,7 +452,7 @@ const AboutPage = () => {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-[#f8c4c4] text-[#46474c] font-bold py-3 px-6 rounded-full inline-block text-lg hover:bg-[#f5a6a6] transition-colors">
+                  <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="bg-[#f8c4c4] text-[#46474c] font-bold py-3 px-6 rounded-full inline-block text-lg hover:bg-[#f5a6a6] transition-colors">
                     Ready to join? Click HERE to apply!
                   </Link>
                 </div>
@@ -559,7 +559,7 @@ const AboutPage = () => {
             </div>
 
             <div className="text-center mb-12">
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
                 Click HERE to apply
               </Link>
             </div>
@@ -590,7 +590,7 @@ const AboutPage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block text-lg hover:bg-gray-800 transition-colors">
                 Ready To Change? Click Here.
               </Link>
             </div>
@@ -688,7 +688,7 @@ const AboutPage = () => {
         <section className="py-20 bg-[#bda5a3] text-[#fff8f7]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold mb-8">Ready to start your next chapter?</h2>
-            <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="bg-[#fff8f7] text-[#46474c] hover:bg-[#46474c] hover:text-[#fff8f7] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all transform hover:scale-105">
+            <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="bg-[#fff8f7] text-[#46474c] hover:bg-[#46474c] hover:text-[#fff8f7] font-bold py-3 px-6 rounded-full inline-flex items-center transition-all transform hover:scale-105">
               Click HERE to apply
               <ArrowRight className="ml-2" />
             </Link>

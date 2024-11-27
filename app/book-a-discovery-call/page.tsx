@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="flex justify-between h-20">
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex-shrink-0 flex items-center">
-                <Image src="/newlogo.png" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
+                <Image src="/logonew.png" alt="TNC Logo" width={200} height={80} className="transform hover:scale-105 transition-all" />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
@@ -93,7 +93,7 @@ const Footer = () => (
 
           <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
           <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
           <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
         </ul>
       </div>

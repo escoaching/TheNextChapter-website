@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Podcast
               </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Book Discovery Call
               </Link>
         
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
               Podcast
               </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
+              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
                 Book Discovery Call
               </Link>
             </div>
@@ -101,7 +101,7 @@ const BecomeUnfuckwithable = () => (
             This call is for women (and non-binary individuals) who are interested in coaching.
           </p>
           <p className="text-lg md:text-xl font-semibold text-[#46474c] mb-6">Are you ready to change the trajectory of your life?</p>
-          <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
+          <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
             BOOK A DISCOVERY CALL WITH COLLEEN NOW!
             <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
           </Link>
@@ -238,7 +238,7 @@ const TransformationsGrid = () => (
       ))}
     </div>
     <div className="mt-12 text-center">
-      <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="inline-flex items-center justify-center px-8 py-5 border border-transparent text-xl font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
+      <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="inline-flex items-center justify-center px-8 py-5 border border-transparent text-xl font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
         BOOK A DISCOVERY CALL
         <ArrowRight className="ml-2 -mr-1 h-6 w-6" aria-hidden="true" />
       </Link>
@@ -270,7 +270,7 @@ const Footer = () => (
       <div className="order-1 md:order-2 mb-6 md:mb-0">
         <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
           <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
           <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
         </ul>
       </div>
