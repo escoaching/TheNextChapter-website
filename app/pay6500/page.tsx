@@ -98,33 +98,46 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     });
   
     if (error) {
-      setErrorMessage("Payment failed. Please try again.");
+      setErrorMessage(error.message || "Payment failed. Please try again.");
       setLoading(false);
       return;
     }
   
-    if (paymentIntent && paymentIntent.status === 'succeeded') {
-      const response = await fetch('/api/payment-confirm', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ paymentIntentId: paymentIntent.id }),
-      });
-  
-      const data = await response.json();
-  
-      if (data.success) {
-        window.location.href = '/payment-success';
-      } else {
-        setErrorMessage("Payment verification failed. Please try again.");
+    if (paymentIntent) {
+      switch (paymentIntent.status) {
+        case 'succeeded':
+          window.location.href = '/payment-success';
+          break;
+        case 'processing':
+          setErrorMessage("Your payment is processing.");
+          break;
+        case 'requires_payment_method':
+          setErrorMessage("Your payment was not successful, please try again.");
+          break;
+        case 'requires_action':
+          // This is likely the case for Affirm payments
+          const { error: confirmError } = await stripe.confirmPayment({
+            clientSecret,
+            redirect: 'always',
+            confirmParams: {
+              return_url: `${window.location.origin}/payment-success`,
+            }
+          });
+          if (confirmError) {
+            setErrorMessage(confirmError.message || "Payment confirmation failed. Please try again.");
+          }
+          break;
+        default:
+          setErrorMessage("Something went wrong.");
+          break;
       }
     } else {
-      setErrorMessage("Payment could not be completed. Please try again.");
+      setErrorMessage("Something went wrong.");
     }
   
     setLoading(false);
   };
+
   
   return (
     <>
