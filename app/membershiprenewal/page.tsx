@@ -452,10 +452,6 @@ export default function PayPage() {
                   description="Meet with your small accountability group each week to share wins, work on skills and set goals for the following week."
                 />
                 <FeatureItem 
-                  title="The Next Chapter Resource Guide"
-                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
-                />
-                <FeatureItem 
                   title="Audio-only content delivery via secret podcast feed"
                   description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
                 />
