@@ -8,6 +8,7 @@ interface Props {
 const MetaComponent = ({title, description, imageUrl, pageUrl}: Props) => {
     return (
         <head>
+          
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={pageUrl} />
