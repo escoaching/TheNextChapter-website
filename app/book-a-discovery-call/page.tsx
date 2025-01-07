@@ -125,7 +125,7 @@ const CalendlyPage = () => {
         </p>
         <div 
           className="calendly-inline-widget w-full" 
-          data-url="https://calendly.com/colleen-emotionalsobrietycoaching/the-next-chapter-discovery-call?background_color=fff8f7&text_color=46474c&primary_color=90cad6" 
+          data-url="https://calendly.com/next-chapter-team/the-next-chapter-discovery-call" 
           style={{ minWidth: '320px', height: 'calc(100vh - 180px)', maxHeight: '1000px' }}
         ></div>
       </main>
