@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Menu, X } from 'lucide-react'
@@ -8,17 +8,17 @@ import MetaComponent from './MetaComponent'
 
 const meta = {
   title: "Emotional Sobriety Coaching",
-  description:"The next chapter is a program centered around emotional sobriety. Get happy, not sober. Reduce your alcohol consumption by 80%.",
-  imageUrl:"https://www.emotionalsobrietycoaching.com/boardwalk.jpeg",
-  pageUrl:"https://www.emotionalsobrietycoaching.com"
+  description: "The next chapter is a program centered around emotional sobriety. Get happy, not sober. Reduce your alcohol consumption by 80%.",
+  imageUrl: "https://www.emotionalsobrietycoaching.com/boardwalk.jpeg",
+  pageUrl: "https://www.emotionalsobrietycoaching.com"
 }
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <>
-      <MetaComponent  {...meta}/>
+      <MetaComponent {...meta} />
       <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20">
@@ -29,7 +29,7 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex md:items-center md:space-x-8">
               <Link href="/about-TNC" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
-              Program
+                Program
               </Link>
               <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Podcast
@@ -37,7 +37,6 @@ const Navbar = () => {
               <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
                 Book Discovery Call
               </Link>
-        
             </div>
             <div className="md:hidden flex items-center">
               <button
@@ -57,10 +56,10 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link href="/about-TNC" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
-              Program
+                Program
               </Link>
               <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
-              Podcast
+                Podcast
               </Link>
               <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
                 Book Discovery Call
@@ -128,8 +127,16 @@ const EmotionalSobrietyCourse = () => (
         <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
       </Link>
     </div>
+
+    <div className="mt-8">
+        <iframe src="https://emotionalsobrietycoaching.activehosted.com/f/4" width="100%" height="500" style={{border: 'none'}}></iframe>
+      </div>
   </div>
+
+  
 )
+
+
 
 const AlcoholProblemSection = () => (
   <div className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fff8f7]">
@@ -138,7 +145,10 @@ const AlcoholProblemSection = () => (
         <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
           <Image src="/boardwalk.jpeg" alt="Boardwalk" width={600} height={400} className="rounded-lg shadow-xl" />
         </div>
+
+        
         <div className="md:w-1/2">
+          <div className="_form_4"></div>
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#46474c]">Alcohol stopped being the problem when you started wondering if it was.</h2>
           <p className="text-base md:text-lg mb-6 text-[#46474c]">The root cause of your brain fog, uncertainty and lack of focus is the emotional disconnect between how you think and what you do.</p>
           <p className="text-base md:text-lg mb-6 text-[#46474c]">The problem is not how much you drink. The problem is that you&apos;re ignoring your feelings about how much you drink.</p>
@@ -226,7 +236,7 @@ const TransformationsGrid = () => (
       ].map((testimonial, index) => (
         <div key={index} className="relative">
           <Image 
-            src={testimonial.image} 
+            src={testimonial.image || "/placeholder.svg"} 
             alt={testimonial.name} 
             width={500}
             height={500}
@@ -248,35 +258,35 @@ const TransformationsGrid = () => (
 
 const Footer = () => (
   <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col md:flex-row justify-between items-center">
-      <div className="mb-6 md:mb-0 order-2 md:order-1">
-        <div className="flex justify-center md:justify-start space-x-6">
-          <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
-            <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
-            <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
-            <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
-          <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
-            <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-          </Link>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div className="mb-6 md:mb-0 order-2 md:order-1">
+          <div className="flex justify-center md:justify-start space-x-6">
+            <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
+              <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
+              <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
+              <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+            <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
+              <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
+            </Link>
+          </div>
+          <p className="text-sm md:text-base mt-4 text-center md:text-left">©2025 Emotional Sobriety Coaching</p>
         </div>
-        <p className="text-sm md:text-base mt-4 text-center md:text-left">©2025 Emotional Sobriety Coaching</p>
-      </div>
-      <div className="order-1 md:order-2 mb-6 md:mb-0">
-        <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
-          <li className="mb-2 md:mb-0"><Link href="/about-TNC" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Program</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
-          <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
-        </ul>
+        <div className="order-1 md:order-2 mb-6 md:mb-0">
+          <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+            <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
+            <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 )
 
 export default function HomePage() {
