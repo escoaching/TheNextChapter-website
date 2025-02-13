@@ -3,8 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import MetaComponent from './MetaComponent'
+import Script from 'next/script'
 
 const meta = {
   title: "Emotional Sobriety Coaching",
@@ -13,100 +16,53 @@ const meta = {
   pageUrl: "https://www.emotionalsobrietycoaching.com"
 }
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
-
-  return (
-    <>
-      <MetaComponent {...meta} />
-      <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20">
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex-shrink-0 flex items-center">
-                <Image src="/logonew.png" alt="TNC Logo" width={200} height={60} className="transform hover:scale-105 transition-all" />
-              </Link>
-            </div>
-            <div className="hidden md:flex md:items-center md:space-x-8">
-              <Link href="/about-TNC" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
-                Program
-              </Link>
-              <Link href="https://itsnotaboutthealcohol.com/" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
-                Podcast
-              </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-[#90CAD6] text-sm font-medium transition-all">
-                Book Discovery Call
-              </Link>
-            </div>
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-[#fff8f7] hover:text-[#90CAD6] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              >
-                {isOpen ? (
-                  <X className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Menu className="block h-6 w-6" aria-hidden="true" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/about-TNC" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
-                Program
-              </Link>
-              <Link href="https://itsnotaboutthealcohol.com" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
-                Podcast
-              </Link>
-              <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-[#fff8f7] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#90CAD6] hover:text-[#46474c]">
-                Book Discovery Call
-              </Link>
-            </div>
-          </div>
-        )}
-      </nav>
-    </>
-  )
-}
-
 const Hero = () => (
   <div className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('/hero.webp')"}}>
-    <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="absolute inset-0 bg-[#46474c] opacity-60"></div>
     <div className="absolute inset-0 flex items-center justify-center md:justify-start md:pl-16 lg:pl-24">
       <div className="text-[#fff8f7] z-10 w-full px-4 md:px-8 text-center md:text-left">
-        <h1 className="text-7xl md:text-8xl font-bold mb-4">Get Happy.</h1>
-        <h2 className="text-6xl md:text-7xl font-semibold mb-4">Not &quot;Sober.&quot;</h2>
-        <h3 className="text-5xl md:text-6xl">It&apos;s Not About the Alcohol.</h3>
+        <h1 className="text-7xl md:text-8xl font-bold mb-4 tracking-tight">Get Happy.</h1>
+        <h2 className="text-6xl md:text-7xl font-semibold mb-4 tracking-tight">Not &quot;Sober.&quot;</h2>
+        <h3 className="text-5xl md:text-6xl tracking-tight">It&apos;s Not About the Alcohol.</h3>
       </div>
     </div>
   </div>
 )
 
 const BecomeUnfuckwithable = () => (
-  <div className="bg-gradient-to-r from-[#fff8f7] to-[#bda5a3] py-16">
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 className="text-4xl font-bold text-[#46474c] mb-12">Become <span className="italic">Unfuckwithable.</span></h2>
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <h3 className="text-2xl md:text-3xl font-bold text-[#46474c] mb-4">Are you sick and tired of feeling powerless and stuck?</h3>
-          <p className="text-lg md:text-xl text-[#46474c] mb-6">My free consultation isn&apos;t just a chat—it&apos;s a sliding door moment.</p>
+  <div className="bg-[#fff8f7] py-20">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 className="text-4xl font-bold text-[#46474c] mb-12 font-playfair">Become <span className="italic">Unfuckwithable.</span></h2>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="md:w-1/2">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#46474c] mb-6 font-playfair">Are you sick and tired of feeling powerless and stuck?</h3>
+          <p className="text-lg md:text-xl text-[#46474c] mb-6 font-montserrat">My free consultation isn&apos;t just a chat—it&apos;s a sliding door moment.</p>
           <p className="text-base md:text-lg text-[#46474c] mb-6">
             We&apos;ll dive into your current situation, create a vision for the future and then discuss how you can bridge the gap between where you are and where you want to be.
           </p>
           <p className="text-base md:text-lg text-[#46474c] mb-6">
             This call is for women (and non-binary individuals) who are interested in coaching.
           </p>
-          <p className="text-lg md:text-xl font-semibold text-[#46474c] mb-6">Are you ready to change the trajectory of your life?</p>
-          <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
-            BOOK A DISCOVERY CALL WITH COLLEEN NOW!
+          <p className="text-lg md:text-xl font-semibold text-[#46474c] mb-8">Are you ready to change the trajectory of your life?</p>
+          <Link 
+            href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-playfair"
+          >
+            Book a Discovery Call
             <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
           </Link>
         </div>
-        <div className="md:w-1/2 md:pl-8">
-          <Image src="/book.webp" alt="Book a Discovery Call" width={500} height={500} className="rounded-lg shadow-xl" />
+        <div className="md:w-1/2">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform -rotate-2"></div>
+            <Image 
+              src="/1.jpg" 
+              alt="Book a Discovery Call" 
+              width={600} 
+              height={600} 
+              className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -114,59 +70,81 @@ const BecomeUnfuckwithable = () => (
 )
 
 const EmotionalSobrietyCourse = () => (
-  <div className="bg-gradient-to-r from-[#fff8f7] to-[#bda5a3] py-16">
+  <div className="bg-[#ffeae6] py-20">
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#46474c] mb-8">Get my Foundations of Emotional Sobriety Audio Course Absolutely FREE!</h2>
-      <p className="text-lg md:text-xl mb-8 text-[#46474c]">Register now to gain instant access on your phone. No log-in required!</p>
-      <h3 className="text-xl md:text-2xl font-semibold mb-4 text-[#46474c]">What is emotional sobriety?</h3>
-      <p className="text-base md:text-lg mb-8 text-[#46474c]">When you&apos;re no longer intoxicated by your own bullshit--your own or anyone else&apos;s.</p>
-      <p className="text-base md:text-lg mb-8 text-[#46474c]">&quot;Stuck&quot; is a feeling, not a fact. Stop waiting for permission, approval or life circumstances to improve so that you can feel powerful.</p>
-      <p className="text-base md:text-lg mb-8 text-[#46474c]">Learn how to clear the emotional obstacles so you can be powerful NOW.</p>
-      <Link href="/Foundations-of-Emotional-Sobriety" className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
-        Click here for instant access to my Foundations of Emotional Sobriety course
+      <h2 className="text-3xl md:text-4xl font-bold text-[#46474c] mb-8 font-playfair">Reduce Your Drinking by 80%</h2>
+      <p className="text-lg md:text-xl mb-8 text-[#46474c] font-montserrat">Register now to gain instant access on your phone. No log-in required!</p>
+      <Link 
+        href="https://app.helloaudio.fm/feed/f9f9f744-6a84-4a6f-bd1d-56ec13f99dc6/signup" 
+        className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-playfair"
+      >
+        Get Instant Access
         <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
       </Link>
     </div>
-
-    <div className="mt-8">
-        <iframe src="https://emotionalsobrietycoaching.activehosted.com/f/4" width="100%" height="500" style={{border: 'none'}}></iframe>
-      </div>
   </div>
-
-  
 )
 
-
+const NewsletterForm = () => (
+  <div className="bg-[#fff8f7] py-20">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="_form_4"></div>
+      <Script 
+        src="https://emotionalsobrietycoaching.activehosted.com/f/embed.php?id=4" 
+        strategy="afterInteractive"
+      />
+    </div>
+  </div>
+)
 
 const AlcoholProblemSection = () => (
-  <div className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fff8f7]">
+  <div className="py-20 px-4 sm:px-6 lg:px-8 bg-[#fff8f7]">
     <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-          <Image src="/boardwalk.jpeg" alt="Boardwalk" width={600} height={400} className="rounded-lg shadow-xl" />
+      <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="md:w-1/2">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-2"></div>
+            <Image 
+              src="/boardwalk.jpeg" 
+              alt="Boardwalk" 
+              width={600} 
+              height={400} 
+              className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+            />
+          </div>
         </div>
-
         
         <div className="md:w-1/2">
           <div className="_form_4"></div>
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#46474c]">Alcohol stopped being the problem when you started wondering if it was.</h2>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">The root cause of your brain fog, uncertainty and lack of focus is the emotional disconnect between how you think and what you do.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">The problem is not how much you drink. The problem is that you&apos;re ignoring your feelings about how much you drink.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">Your body has made a simple request. Please stop drinking.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">But your brain thinks it&apos;s complicated. That the answer should be different. And the internal conflict is blowing your emotional circuit breakers.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">I can teach you how to stop over-thinking sobriety--you don&apos;t need to call yourself an alcoholic or promise to never drink again.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">This isn&apos;t about alcohol. This is about your ability to manage your mind and take care of your body.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">Emotional sobriety is when you deal with life as is instead of how you think it should be.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">You just need to learn how to respect your own intuition. So you feel safe with yourself--with or without a drink in your hand.</p>
-          <div className="mt-8">
-            <p className="text-lg md:text-xl font-semibold mb-2 text-[#46474c]">That&apos;s it.</p>
-            <ul className="list-none text-base md:text-lg mb-4 text-[#46474c]">
-              <li>Take a breath.</li>
-              <li>Allow yourself to feel.</li>
-              <li>Have self-compassion.</li>
-              <li>Set boundaries and realistic expectations.</li>
+          <div className="space-y-6 text-[#46474c]">
+            <p className="text-base md:text-lg">The root cause of your brain fog, uncertainty and lack of focus is the emotional disconnect between how you think and what you do.</p>
+            <p className="text-base md:text-lg">The problem is not how much you drink. The problem is that you&apos;re ignoring your feelings about how much you drink.</p>
+            <p className="text-base md:text-lg">Your body has made a simple request. Please stop drinking.</p>
+            <p className="text-base md:text-lg">But your brain thinks it&apos;s complicated. That the answer should be different. And the internal conflict is blowing your emotional circuit breakers.</p>
+            <p className="text-base md:text-lg">I can teach you how to stop over-thinking sobriety--you don&apos;t need to call yourself an alcoholic or promise to never drink again.</p>
+          </div>
+          <div className="mt-8 p-6 bg-[#ffeae6] rounded-lg shadow-md">
+            <p className="text-lg md:text-xl font-semibold mb-4 text-[#46474c]">That&apos;s it.</p>
+            <ul className="list-none space-y-2 text-base md:text-lg text-[#46474c]">
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-[#f1c4c4] rounded-full mr-2"></span>
+                Take a breath.
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-[#f1c4c4] rounded-full mr-2"></span>
+                Allow yourself to feel.
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-[#f1c4c4] rounded-full mr-2"></span>
+                Have self-compassion.
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-[#f1c4c4] rounded-full mr-2"></span>
+                Set boundaries and realistic expectations.
+              </li>
             </ul>
-            <p className="text-lg md:text-xl font-semibold text-[#46474c]">This is an invitation to recover YOU.</p>
+            <p className="text-lg md:text-xl font-semibold mt-4 text-[#46474c]">This is an invitation to recover YOU.</p>
           </div>
         </div>
       </div>
@@ -174,27 +152,30 @@ const AlcoholProblemSection = () => (
   </div>
 )
 
+
+
 const EmotionalSobrietySection = () => (
-  <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div className="py-20 px-4 sm:px-6 lg:px-8 bg-[#ffeae6]">
     <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row-reverse items-center">
-        <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8">
-          <Image src="/ocean.webp" alt="Ocean" width={600} height={400} className="rounded-lg shadow-xl" />
+      <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+        <div className="md:w-1/2">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform -rotate-2"></div>
+            <Image 
+              src="/5.jpg" 
+              alt="Ocean" 
+              width={600} 
+              height={400} 
+              className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+            />
+          </div>
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#46474c]">Emotional Sobriety</h2>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">This isn&apos;t about alcohol. This is about your ability to manage your mind and take care of your body.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">Emotional sobriety is when you deal with life as is instead of how you think it should be.</p>
-          <p className="text-base md:text-lg mb-6 text-[#46474c]">You just need to learn how to respect your own intuition. So you feel safe with yourself--with or without a drink in your hand.</p>
-          <div className="text-center mt-8">
-            <p className="text-lg md:text-xl font-semibold mb-2 text-[#46474c] text-left">That&apos;s it.</p>
-            <ul className="list-none text-base md:text-lg text-[#46474c] text-left">
-              <li>Take a breath.</li>
-              <li>Allow yourself to feel.</li>
-              <li>Have self-compassion.</li>
-              <li>Set boundaries and realistic expectations.</li>
-            </ul>
-            <p className="text-lg md:text-xl font-semibold mt-4 text-[#46474c] text-left">This is an invitation to recover YOU.</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#46474c] font-playfair">Emotional Sobriety</h2>
+          <div className="space-y-6 text-[#46474c] font-montserrat">
+            <p className="text-base md:text-lg">The problem isn&apos;t alcohol—it&apos;s the weight of constantly questioning yourself. Emotional sobriety happens when you stop fighting reality and start listening to your own intuition. When your thoughts and actions align, drinking becomes a choice, not a struggle.</p>
+            <p className="text-base md:text-lg">This isn&apos;t about restriction. It&apos;s about freedom—the kind that comes from knowing you can trust yourself with or without a drink in your hand. When you step out of the cycle of guilt and second-guessing, you reclaim your power. You learn to manage your mind, take care of your body, and move through life with confidence.</p>
+            <p className="text-base md:text-lg">You don&apos;t need more willpower. You just need a new way forward.</p>
           </div>
         </div>
       </div>
@@ -203,21 +184,36 @@ const EmotionalSobrietySection = () => (
 )
 
 const AboutColleen = () => (
-  <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fff8f7] to-[#bda5a3]">
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-[#46474c]">Hi, I&apos;m Colleen</h2>
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-          <Image src="/closeup.webp" alt="Colleen" width={400} height={400} className="rounded-lg shadow-xl" />
-        </div>
-        <div className="md:w-1/2">
-          <p className="text-base md:text-lg mb-4 text-[#46474c]">I am a recovery-certified Master Coach, host of the globally ranked It&apos;s Not About the Alcohol podcast, and author of Life Off the Label: A Handbook for Creating Your Own Brand  of Health and Happiness.</p>
-          <p  className="text-base md:text-lg mb-4 text-[#46474c]">I utilize holistic, evidence-based strategies rooted in neurophysiology and growth mindset to assist women in overcoming over-drinking without relying on AA or complete abstinence from alcohol. My approach focuses on reconnecting individuals with their intuition and personal power.</p>
-          <p className="text-base md:text-lg mb-4 text-[#46474c]">I hold a MSc in health coaching, a BS in biology and chemistry education, and certification as a women&apos;s functional and integrative medicine professional.</p>
-          <Link href="/about-colleen" className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
+  <div className="py-20 px-4 sm:px-6 lg:px-8 bg-[#fff8f7]">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#46474c]">Hi, I&apos;m Colleen</h2>
+      <div className="flex flex-col md:flex-row items-start gap-12">
+        <div className="md:w-1/2 flex flex-col items-center">
+          <div className="relative mb-8">
+            <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-2"></div>
+            <Image 
+              src="/2.png" 
+              alt="Colleen" 
+              width={500} 
+              height={500} 
+              className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+            />
+          </div>
+          <Link 
+            href="/about-colleen" 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg"
+          >
             LEARN MORE ABOUT ME
             <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
           </Link>
+        </div>
+        <div className="md:w-1/2">
+          <div className="space-y-6 text-[#46474c]">
+            <p className="text-base md:text-lg">I am here to assist in the evolution of human consciousness. My specific role is to serve as a light on the path to freedom for women struggling with alcohol use disorder.</p>
+            <p className="text-base md:text-lg">Colleen Freeland Kachmann is an intuitive drinking coach and host of the globally top-ranked It&apos;s Not About the Alcohol podcast.</p>
+            <p className="text-base md:text-lg">Colleen works with high achieving, professional women to reduce alcohol consumption by 80 percent. She combines holistic and evidence-based strategies in neurophysiology, nervous system regulation and growth mindset to reprogram your brain so you actually prefer drinking in moderation.</p>
+            <p className="text-base md:text-lg">Colleen is an addiction and recovery-certified master life coach with an MSc in health coaching, a BS in biology and chemistry education and is certified as a women&apos;s functional and integrative professional. She founded Emotional Sobriety Coaching©, an intensive group coaching program for women to master the seven core skills of emotional sobriety.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -225,82 +221,57 @@ const AboutColleen = () => (
 )
 
 const TransformationsGrid = () => (
-  <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fff8f7] to-[#bda5a3]">
-    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#46474c]">TRANSFORMATIONS</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-      {[
-        { name: "Dani Truly", image: "/dani.webp" },
-        { name: "Diana Gibson", image: "/diana.webp" },
-        { name: "Michelle Hobin", image: "/michelle.webp" },
-        { name: "Makini Campbell", image: "/makini.webp" },
-      ].map((testimonial, index) => (
-        <div key={index} className="relative">
-          <Image 
-            src={testimonial.image || "/placeholder.svg"} 
-            alt={testimonial.name} 
-            width={500}
-            height={500}
-            layout="responsive"
-            objectFit="cover" 
-            className="rounded-lg shadow-xl"
-          />
-        </div>
-      ))}
-    </div>
-    <div className="mt-12 text-center">
-      <Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="inline-flex items-center justify-center px-8 py-5 border border-transparent text-xl font-bold rounded-md text-[#fff8f7] bg-[#90CAD6] hover:bg-[#46474c] transition-all">
-        BOOK A DISCOVERY CALL
-        <ArrowRight className="ml-2 -mr-1 h-6 w-6" aria-hidden="true" />
-      </Link>
+  <div className="py-20 px-4 sm:px-6 lg:px-8 bg-[#ffeae6]">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#46474c]">TRANSFORMATIONS</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {[
+          { name: "Dani Truly", image: "/dani.webp" },
+          { name: "Diana Gibson", image: "/diana.webp" },
+          { name: "Michelle Hobin", image: "/michelle.webp" },
+          { name: "Makini Campbell", image: "/makini.webp" },
+        ].map((testimonial, index) => (
+          <div key={index} className="relative group">
+            <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-1 transition-transform group-hover:rotate-2"></div>
+            <Image 
+              src={testimonial.image || "/placeholder.svg"} 
+              alt={testimonial.name} 
+              width={500}
+              height={500}
+              className="relative rounded-lg shadow-xl transform transition-all duration-300 group-hover:scale-105" 
+            />
+          </div>
+        ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Link 
+          href="/about-TNC" 
+          className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          Learn More About The Next Chapter
+          <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+        </Link>
+      </div>
     </div>
   </div>
 )
 
-const Footer = () => (
-  <footer className="bg-[#46474c] text-[#fff8f7] py-8 md:py-12">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-        <div className="mb-6 md:mb-0 order-2 md:order-1">
-          <div className="flex justify-center md:justify-start space-x-6">
-            <Link href="https://www.youtube.com/channel/UCv24pItAK0xWQ_m6mD8T50w" target="_blank" rel="noopener noreferrer">
-              <Image src="/youtube.webp" alt="YouTube" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-            </Link>
-            <Link href="https://vimeo.com/user138845606" target="_blank" rel="noopener noreferrer">
-              <Image src="/vimeo.webp" alt="Vimeo" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-            </Link>
-            <Link href="https://www.instagram.com/thehangoverwhisperer?igsh=MWowa2dhZnRmc3hlZw==" target="_blank" rel="noopener noreferrer">
-              <Image src="/instagram.png" alt="Instagram" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-            </Link>
-            <Link href="https://www.tiktok.com/@hangoverwhisperer" target="_blank" rel="noopener noreferrer">
-              <Image src="/tiktok.png" alt="TikTok" width={32} height={32} className="hover:opacity-80 transition-opacity" />
-            </Link>
-          </div>
-          <p className="text-sm md:text-base mt-4 text-center md:text-left">©2025 Emotional Sobriety Coaching</p>
-        </div>
-        <div className="order-1 md:order-2 mb-6 md:mb-0">
-          <ul className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
-            <li className="mb-2 md:mb-0"><Link href="/" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Home</Link></li>
-            <li className="mb-2 md:mb-0"><Link href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Book Discovery Call</Link></li>
-            <li className="mb-2 md:mb-0"><Link href="/privacy-policy" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Privacy Policy</Link></li>
-            <li className="mb-2 md:mb-0"><Link href="/terms" className="text-sm md:text-base hover:text-[#90CAD6] transition-all">Terms & Conditions</Link></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-)
-
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#fff8f7]">
+      <MetaComponent {...meta} />
       <Navbar />
-      <Hero />
-      <BecomeUnfuckwithable />
-      <EmotionalSobrietyCourse />
-      <AlcoholProblemSection />
-      <EmotionalSobrietySection />
-      <AboutColleen />
-      <TransformationsGrid />
+      <main>
+        <Hero />
+        <BecomeUnfuckwithable />
+        <EmotionalSobrietyCourse />
+        <NewsletterForm />
+        <AlcoholProblemSection />
+        <EmotionalSobrietySection />
+      
+        <AboutColleen />
+        <TransformationsGrid />
+      </main>
       <Footer />
     </div>
   )
