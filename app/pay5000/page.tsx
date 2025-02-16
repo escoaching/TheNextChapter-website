@@ -362,6 +362,14 @@ export default function PayPage() {
                   title="Bonus Resources"
                   description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
                 />
+
+                <div className="mt-12">
+                  <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
+                  <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
+                    <input type="hidden" name="LinkId" value="561f42db-a41e-43e9-a1ba-3c506f5b2373" />
+                    <input type="image" src="//content.authorize.net/images/buy-now-gray.gif" alt="Buy with HSA/FSA" />
+                  </form>
+                </div>
               </div>
             </div>
             <div className="lg:w-1/2 flex flex-col justify-between">
