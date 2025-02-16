@@ -24,23 +24,22 @@ const AboutPage = () => {
       <main className="pt-20">
         <section className="py-20 bg-[#fff8f7]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="md:w-1/2">
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#46474c]">Hi, My Name Is Colleen.</h1>
-                <h2 className="text-3xl md:text-4xl mb-8 text-[#bda5a3]">And I&apos;m not an alcoholic.</h2>
-                <p className="text-xl md:text-2xl mb-8 text-[#46474c]">As a high-functioning perfectionist, my goal was to get better at drinking....</p>
-                <p className="text-2xl md:text-3xl font-bold text-[#46474c]">Everything changed the day I decided to get better at thinking.</p>
-              </div>
-              <div className="md:w-1/2">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-2"></div>
+            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="md:w-1/2">
                   <Image 
                     src="/proheadshot.webp" 
                     alt="Colleen Kachmann" 
                     width={400} 
                     height={400} 
-                    className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+                    className="rounded-lg" 
                   />
+                </div>
+                <div className="md:w-1/2">
+                  <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#46474c]">Hi, My Name Is Colleen.</h1>
+                  <h2 className="text-3xl md:text-4xl mb-8 text-[#bda5a3]">And I&apos;m not an alcoholic.</h2>
+                  <p className="text-xl md:text-2xl mb-8 text-[#46474c]">As a high-functioning perfectionist, my goal was to get better at drinking....</p>
+                  <p className="text-2xl md:text-3xl font-bold text-[#46474c]">Everything changed the day I decided to get better at thinking.</p>
                 </div>
               </div>
             </div>
@@ -51,24 +50,23 @@ const AboutPage = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-[#46474c]">Meet Colleen Kachmann</h2>
             <h3 className="text-xl md:text-2xl mb-12 text-center text-[#46474c]">Master life coach and addiction recovery specialist</h3>
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="md:w-1/2">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform -rotate-2"></div>
+            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="md:w-1/2">
                   <Image 
                     src="/2.png" 
                     alt="Colleen Kachmann" 
                     width={500} 
                     height={500} 
-                    className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+                    className="rounded-lg" 
                   />
                 </div>
-              </div>
-              <div className="md:w-1/2 space-y-6">
-                <p className="text-lg md:text-xl text-[#46474c] font-montserrat">I am here to assist in the evolution of human consciousness. My specific role is to serve as a light on the path to freedom for women struggling with alcohol use disorder.</p>
-                <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen Freeland Kachmann is an intuitive drinking coach and host of the globally top-ranked <i>It&apos;s Not About the Alcohol</i> podcast.</p>
-                <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen works with high achieving, professional women to reduce alcohol consumption by 80 percent. She combines holistic and evidence-based strategies in neurophysiology, nervous system regulation and growth mindset to reprogram your brain so you actually prefer drinking in moderation.</p>
-                <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen is an addiction and recovery-certified master life coach with an MSc in health coaching, a BS in biology and chemistry education and is certified as a women&apos;s functional and integrative professional. She founded Emotional Sobriety Coaching©, an intensive group coaching program for women to master the seven core skills of emotional sobriety.</p>
+                <div className="md:w-1/2 space-y-6">
+                  <p className="text-lg md:text-xl text-[#46474c] font-montserrat">I am here to assist in the evolution of human consciousness. My specific role is to serve as a light on the path to freedom for women struggling with alcohol use disorder.</p>
+                  <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen Freeland Kachmann is an intuitive drinking coach and host of the globally top-ranked <i>It&apos;s Not About the Alcohol</i> podcast.</p>
+                  <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen works with high achieving, professional women to reduce alcohol consumption by 80 percent. She combines holistic and evidence-based strategies in neurophysiology, nervous system regulation and growth mindset to reprogram your brain so you actually prefer drinking in moderation.</p>
+                  <p className="text-lg md:text-xl text-[#46474c] font-montserrat">Colleen is an addiction and recovery-certified master life coach with an MSc in health coaching, a BS in biology and chemistry education and is certified as a women&apos;s functional and integrative professional. She founded Emotional Sobriety Coaching©, an intensive group coaching program for women to master the seven core skills of emotional sobriety.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -79,7 +77,7 @@ const AboutPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#fff8f7]">Ready to learn more?</h2>
             <Link 
               href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" 
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-playfair"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-montserrat"
             >
               Book a Discovery Call
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -97,40 +95,35 @@ const AboutPage = () => {
               <p className="text-2xl md:text-3xl font-bold text-[#46474c]">Because it felt ridiculous to refer to myself an an alcoholic after I quit drinking.</p>
             </div>
             <div className="mt-12">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-2"></div>
-                <Image 
-                  src="/4.jpg" 
-                  alt="Colleen in nature" 
-                  width={500} 
-                  height={500} 
-                  className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 mx-auto" 
-                />
-              </div>
+              <Image 
+                src="/4.jpg" 
+                alt="Colleen in nature" 
+                width={500} 
+                height={500} 
+                className="rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 mx-auto" 
+              />
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-[#ffeae6]">
+        <section className="py-20 bg-[#fff8f7]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#46474c]">Radical Responsibility</h2>
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="md:w-1/2 space-y-6 order-1 md:order-1">
-                <p className="text-lg md:text-xl text-[#46474c]">As children, we&apos;re taught to control our behavior at the expense of our emotions. Keep your chin up. Don&apos;t cry. Smile. When someone asks how you are, say, &quot;I&apos;m fine.&quot; Even if you&apos;re not. Especially when you&apos;re not.</p>
-                <p className="text-lg md:text-xl text-[#46474c]">And that&apos;s how we come to feel like an empty shell of a broken person. Invisible. Disconnected. Because we&apos;re more concerned with how we appear in the world than how we feel in our bodies. So we use alcohol. Food. Career. Kids. Drugs. Drama. To avoid the feelings in our bodies. And to run ourselves ragged. Because the excuse of not having the energy or time to take care of ourselves is acceptable. Even rewarded.</p>
-                <p className="text-lg md:text-xl text-[#46474c]">The irony is that ignoring our needs makes them stronger. We become victims of circumstance, passive aggressive communication specialists and beholden to subconscious urges.</p>
-                <p className="text-2xl md:text-3xl font-bold text-[#46474c]">[Spoiler Alert] If you are not actively managing your emotional needs, they are managing you.</p>
-              </div>
-              <div className="md:w-1/2 order-2 md:order-2">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform -rotate-2"></div>
+            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="md:w-1/2">
                   <Image 
                     src="/3.png" 
                     alt="Colleen walking in nature" 
                     width={500} 
                     height={500} 
-                    className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300" 
+                    className="rounded-lg" 
                   />
+                </div>
+                <div className="md:w-1/2 space-y-6">
+                  <p className="text-lg md:text-xl text-[#46474c]">As children, we&apos;re taught to control our behavior at the expense of our emotions. Keep your chin up. Don&apos;t cry. Smile. When someone asks how you are, say, &quot;I&apos;m fine.&quot; Even if you&apos;re not. Especially when you&apos;re not.</p>
+                  <p className="text-lg md:text-xl text-[#46474c]">And that&apos;s how we come to feel like an empty shell of a broken person. Invisible. Disconnected. Because we&apos;re more concerned with how we appear in the world than how we feel in our bodies. So we use alcohol. Food. Career. Kids. Drugs. Drama. To avoid the feelings in our bodies. And to run ourselves ragged. Because the excuse of not having the energy or time to take care of ourselves is acceptable. Even rewarded.</p>
+                  <p className="text-lg md:text-xl text-[#46474c]">The irony is that ignoring our needs makes them stronger. We become victims of circumstance, passive aggressive communication specialists and beholden to subconscious urges.</p>
+                  <p className="text-2xl md:text-3xl font-bold text-[#46474c]">[Spoiler Alert] If you are not actively managing your emotional needs, they are managing you.</p>
                 </div>
               </div>
             </div>
@@ -142,7 +135,7 @@ const AboutPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#fff8f7]">Ready to start your next chapter?</h2>
             <Link 
               href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" 
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-playfair"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-montserrat"
             >
               Book a Discovery Call
               <ArrowRight className="ml-2 h-5 w-5" />

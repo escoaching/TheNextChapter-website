@@ -195,8 +195,8 @@ const OnboardingChecklist = () => {
       buttonText: "Get digital copy"
     },
     {
-      title: "Voxer",
-      description: "Download Voxer app and join the community platform",
+      title: "Discord",
+      description: "Download Discord app and join the community platform",
     },
     {
       title: "Select your Accountability Group",
@@ -275,7 +275,7 @@ const OnboardingChecklist = () => {
                       <p>Common questions to discuss:</p>
                       <ul className="list-disc pl-5 space-y-2">
                         <li>Schedule and timing of coaching calls</li>
-                        <li>How to use Voxer effectively</li>
+                        <li>How to use Discord effectively</li>
                         <li>Accountability group expectations</li>
                         <li>Access to resources and materials</li>
                         <li>Communication preferences</li>

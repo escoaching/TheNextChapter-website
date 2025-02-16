@@ -31,7 +31,7 @@ const CalendlyPage = () => {
       <Navbar />
 
       <main className="flex-grow flex flex-col items-center justify-start px-4 pt-24 pb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-[#46474c] font-playfair">Book Your Discovery Call</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-center mb-2 text-[#46474c] font-montserrat">Book Your Discovery Call</h1>
         <p className="text-sm sm:text-base text-center mb-4 max-w-2xl mx-auto text-[#46474c] font-montserrat">
           Take the first step towards transforming your relationship with alcohol. Schedule a free discovery call with Colleen to learn more about The Next Chapter program.
         </p>

@@ -27,7 +27,7 @@ export default function TermsPage() {
               Emotional Sobriety Coaching offers coaching programs, retreats, and transformational courses designed to help individuals break free from unhealthy patterns with alcohol, improve emotional well-being, and manifest an empowered, aligned life.
             </p>
             
-            <div className="bg-white rounded-lg p-8 mb-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 mb-6 shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-xl font-bold text-[#46474c] mb-4">Our Offerings Include:</h3>
               <div className="space-y-6">
                 <div>
@@ -58,14 +58,14 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">2. Purchase Currency</h2>
-            <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300">
               <p className="text-[#46474c]">All prices are clearly displayed in U.S. Dollars (USD) on our website, ensuring full transparency for international customers.</p>
             </div>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">3. Customer Service Contact Information</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <p className="text-[#46474c] mb-4">We provide multiple ways for customers to easily contact us:</p>
               <ul className="space-y-3 text-[#46474c]">
                 {[
@@ -87,7 +87,7 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">4. Fulfillment Policies</h2>
             <div className="space-y-6">
-              <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-bold text-[#46474c] mb-4">Refund Policy</h3>
                 <ul className="space-y-4 text-[#46474c]">
                   {[
@@ -103,7 +103,7 @@ export default function TermsPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-bold text-[#46474c] mb-4">Shipping & Delivery Policy</h3>
                 <p className="text-[#46474c] mb-4">Emotional Sobriety Coaching primarily provides coaching services and digital resources; however, we do ship a physical workbook to all new clients.</p>
                 
@@ -123,7 +123,7 @@ export default function TermsPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+              <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
                 <h3 className="text-xl font-bold text-[#46474c] mb-4">Return & Cancellation Policy</h3>
                 <ul className="space-y-2 text-[#46474c]">
                   {[
@@ -143,7 +143,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">5. Legal or Export Restrictions</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <ul className="space-y-2 text-[#46474c]">
                 {[
                   "Coaching services are not intended to replace professional medical or therapeutic treatment.",
@@ -161,7 +161,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">6. Privacy Policy</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <p className="text-[#46474c] mb-4">Our Privacy Policy is outlined on our website and explains:</p>
               <ul className="space-y-2 text-[#46474c]">
                 {[
@@ -181,7 +181,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">7. Business Address</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <p className="text-[#46474c] mb-4">📍 2525 Wild Cat Cove, Fort Wayne Indiana 46814</p>
               <p className="text-[#46474c]">While Emotional Sobriety Coaching primarily operates online, our physical retreat locations and event venues are disclosed upon booking.</p>
             </div>
@@ -189,7 +189,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">8. Terms of Promotions & Discounts</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <ul className="space-y-4 text-[#46474c]">
                 {[
                   "Limited-Time Discounts – Occasionally, discounts may be offered on coaching programs or retreat tickets. The terms of the discount will always be stated at checkout and in promotional emails.",
@@ -208,7 +208,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">9. Website Security & Payment Information</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <ul className="space-y-2 text-[#46474c]">
                 {[
                   "Our website is secured with HTTPS to ensure safe transactions.",
@@ -227,7 +227,7 @@ export default function TermsPage() {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-[#46474c] mb-4">10. Accepted Payment Methods</h2>
-            <div className="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
+            <div className="bg-[#fff8f7] rounded-lg p-8 shadow-md hover:shadow-lg transition-all duration-300">
               <p className="text-[#46474c] mb-4">We accept the following payment methods:</p>
               <ul className="space-y-2 text-[#46474c]">
                 {[

@@ -43,45 +43,43 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="md:w-1/2">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform rotate-2"></div>
-                  <div className="relative w-full aspect-square max-w-[800px] mx-auto">
+              <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
+                <div className="flex flex-col md:flex-row items-center gap-12">
+                  <div className="md:w-1/2">
                     <Image
                       src="/groupCoaching.webp"
                       alt="The Next Chapter"
-                      layout="fill"
-                      objectFit="contain"
-                      priority
-                      className="transform hover:scale-105 transition-all duration-300"
+                      width={600}
+                      height={600}
+                      className="rounded-lg"
                     />
                   </div>
-                </div>
-              </div>
-              <div className="md:w-1/2 space-y-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#46474c]">
-                  Evidence-based, holistic <span className="underline decoration-[#f1c4c4] decoration-4">brain training</span> for professional women.
-                </h2>
-                <p className="text-2xl md:text-3xl text-[#bda5a3]">
-                  Change how you <span className="font-bold">think</span> about alcohol so you can drink (and not drink) like a normal person.
-                </p>
-                <h3 className="text-3xl md:text-4xl font-bold text-[#46474c]">
-                  Get Happy. Not Sober.
-                </h3>
-                <p className="text-xl text-[#46474c]">
-                  Escape the all-or-nothing mindset that triggers the habit of over-drinking so you never have to &quot;start over&quot; again!
-                </p>
-                <p className="text-xl italic text-[#46474c]">
-                  &quot;This is literally a boot camp for your brain.&quot;
-                </p>
-                <div>
-                  <Link
-                    href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website"
-                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg"
-                  >
-                    Click Here To Apply!
-                    <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-                  </Link>
+                  <div className="md:w-1/2 space-y-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#46474c]">
+                      Evidence-based, holistic <span className="underline decoration-[#f1c4c4] decoration-4">brain training</span> for professional women.
+                    </h2>
+                    <p className="text-2xl md:text-3xl text-[#46474c]">
+                      Change how you <span className="font-bold">think</span> about alcohol so you can drink (and not drink) like a normal person.
+                    </p>
+                    <h3 className="text-3xl md:text-4xl font-bold text-[#46474c]">
+                      Get Happy. Not Sober.
+                    </h3>
+                    <p className="text-xl text-[#46474c]">
+                      Escape the all-or-nothing mindset that triggers the habit of over-drinking so you never have to &quot;start over&quot; again!
+                    </p>
+                    <p className="text-xl italic text-[#46474c]">
+                      &quot;This is literally a boot camp for your brain.&quot;
+                    </p>
+                    <div>
+                      <Link
+                        href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website"
+                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-montserrat"
+                      >
+                        Click Here To Apply!
+                        <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,46 +134,45 @@ const AboutPage = () => {
 
         <section className="py-20 bg-[#fff8f7]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-12">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-[#f1c4c4] rounded-lg transform -rotate-2"></div>
+            <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center gap-12">
+                <div className="md:w-1/2">
                   <Image
                     src="/altflowers.jpeg"
                     alt="Woman walking in a field"
                     width={600}
                     height={800}
-                    className="relative rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 object-cover w-full h-full"
+                    className="rounded-lg"
                   />
                 </div>
-              </div>
-              <div className="lg:w-1/2 space-y-8">
-                <h2 className="text-3xl font-bold text-[#46474c]">
-                  How do you expect to feel truly <i>powerful</i> if you subscribe to the belief that you can&apos;t control yourself around alcohol?
-                </h2>
-                <div className="bg-[#f1c4c4] text-[#46474c] font-bold py-3 px-6 inline-block rounded-md shadow-md">
-                  YOU CAN&apos;T.
+                <div className="md:w-1/2 space-y-8">
+                  <h2 className="text-3xl font-bold text-[#46474c]">
+                    How do you expect to feel truly <i>powerful</i> if you subscribe to the belief that you can&apos;t control yourself around alcohol?
+                  </h2>
+                  <div className="bg-[#f1c4c4] text-[#46474c] font-bold py-3 px-6 inline-block rounded-md shadow-md">
+                    YOU CAN&apos;T.
+                  </div>
+                  <p className="text-xl font-semibold text-[#46474c]">
+                    Which is why the <i>biggest mistake</i> you can make when you realize drinking has become a problem is to:
+                  </p>
+                  <div className="bg-[#ffeae6] p-6 rounded-lg shadow-md">
+                    <ul className="space-y-4">
+                      {[
+                        "Identify as an alcoholic",
+                        "Commit to a lifetime of abstinence",
+                        'Believe you are "hard-wired" for addiction'
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-center space-x-4 bg-white p-4 rounded-md">
+                          <X className="text-[#f1c4c4] w-6 h-6" />
+                          <span className="text-lg text-[#46474c]">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="text-xl text-[#46474c]">
+                    Alcoholism is not a disease. Over-drinking is a <i>habit</i>. You practiced the art and skill of drinking, because you <i>believed</i>:
+                  </p>
                 </div>
-                <p className="text-xl font-semibold text-[#46474c]">
-                  Which is why the <i>biggest mistake</i> you can make when you realize drinking has become a problem is to:
-                </p>
-                <div className="bg-[#ffeae6] p-6 rounded-lg shadow-md">
-                  <ul className="space-y-4">
-                    {[
-                      "Identify as an alcoholic",
-                      "Commit to a lifetime of abstinence",
-                      'Believe you are "hard-wired" for addiction'
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-center space-x-4 bg-white p-4 rounded-md">
-                        <X className="text-[#f1c4c4] w-6 h-6" />
-                        <span className="text-lg text-[#46474c]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <p className="text-xl text-[#46474c]">
-                  Alcoholism is not a disease. Over-drinking is a <i>habit</i>. You practiced the art and skill of drinking, because you <i>believed</i>:
-                </p>
               </div>
             </div>
           </div>

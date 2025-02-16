@@ -368,7 +368,7 @@ export default function PayPage() {
                   description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
                 />
                 <FeatureItem 
-                  title="Community Platform on Voxer"
+                  title="Community Platform on Discord"
                   description="(completely private and not connected to social media) provides you with support 7 days per week."
                 />
                 <FeatureItem 
