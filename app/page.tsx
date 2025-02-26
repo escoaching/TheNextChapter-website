@@ -198,6 +198,50 @@ const EmotionalSobrietySection = () => (
   </div>
 )
 
+const ManifestationRetreat = () => (
+  <div className="bg-[#fff8f7] py-20">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="md:w-1/2">
+            <Image 
+              src="/retreat.png" 
+              alt="Emotional Sobriety Retreat" 
+              width={800} 
+              height={800} 
+              className="rounded-lg" 
+            />
+          </div>
+          <div className="md:w-1/2">
+            <p className="text-xl text-[#46474c] mb-4 font-playfair italic">Take Your Transformation Offline ✨</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#46474c] mb-6 font-playfair-display">Join Me for a Life-Changing In-Person Experience</h2>
+            <div className="space-y-6">
+              <p className="text-lg text-[#46474c] font-montserrat">
+                While the internet is a powerful tool for growth and connection, true transformation happens in person. There&apos;s nothing like stepping into an immersive space, surrounded by like-minded women, where deep healing and manifestation come to life.
+              </p>
+              <p className="text-lg text-[#46474c] font-montserrat">
+                At the Manifestation Retreat, we&apos;re creating something beyond just a getaway—it&apos;s a reset. A space to shift your energy, rewrite your story, and embody the reality you know you&apos;re meant for.
+              </p>
+              <p className="text-lg text-[#46474c] font-montserrat">
+                From powerful workshops to soul-nourishing experiences, this retreat is where breakthroughs happen face to face. Are you ready to step into the next version of you?
+              </p>
+            </div>
+            <div className="mt-8">
+              <Link 
+                href="https://pages.emotionalsobrietycoaching.com/Manifestation-Retreat?test=true" 
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-montserrat"
+              >
+                LEARN MORE
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
 const AboutColleen = () => (
   <div className="bg-[#fff8f7] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -277,10 +321,10 @@ export default function HomePage() {
         <Hero />
         <BecomeUnfuckwithable />
         <EmotionalSobrietyCourse />
+        <ManifestationRetreat />
         <NewsletterForm />
         <AlcoholProblemSection />
         <EmotionalSobrietySection />
-      
         <AboutColleen />
         <TransformationsGrid />
       </main>
