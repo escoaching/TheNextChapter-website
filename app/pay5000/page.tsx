@@ -100,32 +100,70 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     });
   
     if (error) {
-      setErrorMessage("Payment failed. Please try again.");
+      // Handle specific error cases
+      if (error.type === 'validation_error') {
+        setErrorMessage(error.message);
+      } else if (error.type === 'card_error') {
+        setErrorMessage('Your card was declined. Please try another payment method.');
+      } else {
+        setErrorMessage('An unexpected error occurred. Please try again.');
+      }
       setLoading(false);
       return;
     }
   
-    if (paymentIntent && paymentIntent.status === 'succeeded') {
-      const response = await fetch('/api/payment-confirm', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ paymentIntentId: paymentIntent.id }),
-      });
-  
-      const data = await response.json();
-  
-      if (data.success) {
-        window.location.href = '/payment-success';
-      } else {
-        setErrorMessage("Payment verification failed. Please try again.");
+    if (paymentIntent) {
+      switch (paymentIntent.status) {
+        case 'succeeded':
+          // Payment was successful
+          window.location.href = '/payment-success';
+          break;
+        case 'processing':
+          setErrorMessage("Your payment is processing. Please wait...");
+          // Keep the loading state active while processing
+          break;
+        case 'requires_payment_method':
+          setErrorMessage("Your payment was not successful, please try again.");
+          setLoading(false);
+          break;
+        case 'requires_action':
+          // For payment methods that require additional steps (like Affirm)
+          try {
+            const { error: confirmError, paymentIntent: confirmedIntent } = await stripe.confirmPayment({
+              clientSecret,
+              redirect: 'if_required',
+              confirmParams: {
+                return_url: `${window.location.origin}/payment-success`,
+              }
+            });
+            
+            if (confirmError) {
+              if (confirmError.type === 'validation_error') {
+                setErrorMessage(confirmError.message);
+              } else {
+                setErrorMessage("The payment process was interrupted. Please try again.");
+              }
+              setLoading(false);
+            } else if (confirmedIntent && confirmedIntent.status === 'succeeded') {
+              window.location.href = '/payment-success';
+            } else {
+              setLoading(false);
+            }
+          } catch (error: unknown) {
+            console.error('Payment confirmation error:', error);
+            setErrorMessage("The payment process was interrupted. Please try again.");
+            setLoading(false);
+          }
+          break;
+        default:
+          setErrorMessage("Something went wrong with your payment. Please try again.");
+          setLoading(false);
+          break;
       }
     } else {
-      setErrorMessage("Payment could not be completed. Please try again.");
+      setErrorMessage("We couldn't process your payment. Please try again.");
+      setLoading(false);
     }
-  
-    setLoading(false);
   };
   
   return (
