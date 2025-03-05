@@ -1,6 +1,8 @@
 'use client';
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
+import { useSearchParams, useRouter } from 'next/navigation';
+import { loadStripe } from "@stripe/stripe-js";
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MetaComponent from "../MetaComponent"
@@ -12,7 +14,72 @@ const meta = {
   pageUrl: "https://emotionalsobrietycoaching.com/payment-success"
 }
 
+if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
+  throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined")
+}
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
+
 const PaymentSuccessContent = () => {
+  const [verifying, setVerifying] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  useEffect(() => {
+    const verifyPayment = async () => {
+      const paymentIntentId = searchParams.get('payment_intent');
+      
+      if (!paymentIntentId) {
+        router.push('/');
+        return;
+      }
+
+      try {
+        const stripe = await stripePromise;
+        if (!stripe) throw new Error('Stripe failed to initialize');
+
+        const { paymentIntent } = await stripe.retrievePaymentIntent(
+          searchParams.get('payment_intent_client_secret') || ''
+        );
+
+        if (!paymentIntent || paymentIntent.status !== 'succeeded') {
+          // If payment is not successful, redirect back to the payment page
+          const amount = paymentIntent?.amount ? Math.floor(paymentIntent.amount / 100) : 4000;
+          router.push(`/pay${amount}`);
+          return;
+        }
+
+        setVerifying(false);
+      } catch (err) {
+        console.error('Payment verification error:', err);
+        setError('Payment verification failed. Please contact support.');
+        setVerifying(false);
+      }
+    };
+
+    verifyPayment();
+  }, [searchParams, router]);
+
+  if (verifying) {
+    return (
+      <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full">
+        <p className="text-xl text-center text-[#46474c] font-montserrat">
+          Verifying your payment...
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full">
+        <p className="text-xl text-center text-red-500 font-montserrat">
+          {error}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full">
       <h1 className="text-4xl font-bold mb-6 text-center text-[#46474c] font-playfair">Payment Successful!</h1>
