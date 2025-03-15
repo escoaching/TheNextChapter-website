@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
@@ -8,7 +8,12 @@ import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navItems = [
     { href: '/about-TNC', label: 'Program' },
@@ -18,6 +23,10 @@ export default function Navbar() {
   ]
 
   const filteredNavItems = navItems.filter(item => item.href !== pathname)
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">

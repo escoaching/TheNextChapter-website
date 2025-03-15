@@ -279,6 +279,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#f1c4c4] focus:border-[#f1c4c4] text-lg font-montserrat"
           />
+          <p className="text-sm text-[#46474c] mt-1 font-montserrat">If you are using Affirm, this box must contain US</p>
         </div>
   
         {clientSecret && <PaymentElement />}
@@ -352,7 +353,7 @@ export default function PayPage() {
   return (
     <div className="min-h-screen bg-[#fff8f7] flex flex-col">
       <MetaComponent {...meta} />
-      <Navbar />
+      <Navbar key="navbar" />
       
       <main className="flex-grow mt-20">
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
