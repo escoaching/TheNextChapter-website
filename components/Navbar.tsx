@@ -18,7 +18,7 @@ export default function Navbar() {
   const navItems = [
     { href: '/about-TNC', label: 'Program' },
     { href: '/about-colleen', label: 'About' },
-    { href: 'https://itsnotaboutthealcohol.com/', label: 'Podcast', external: true },
+    { href: '/podcast', label: 'Podcast' },
     { href: 'https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website', label: 'Book Discovery Call', external: true },
   ]
 
