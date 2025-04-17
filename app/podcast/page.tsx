@@ -10,7 +10,7 @@ import MetaComponent from '../MetaComponent'
 
 const meta = {
   title: "It's Not About the Alcohol Podcast | Emotional Sobriety Coaching",
-  description: "Holistic Recovery & Emotional Sobriety podcast with Colleen Kachmann. Learn mindset strategies that move you from worry and regret to resilience and confidence.",
+  description: "Get happy. Not sober. Emotional Sobriety podcast with Colleen Kachmann. Learn mindset strategies that move you from worry and regret to resilience and confidence.",
   imageUrl: "https://www.emotionalsobrietycoaching.com/podcast-preview.jpeg",
   pageUrl: "https://www.emotionalsobrietycoaching.com/podcast"
 }
@@ -20,7 +20,7 @@ const PodcastHero = () => (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h1 className="text-5xl md:text-6xl font-bold text-[#46474c] mb-4 font-playfair">It&apos;s Not About the Alcohol Podcast</h1>
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#46474c] mb-8 font-playfair">Holistic Recovery & Emotional Sobriety</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#46474c] mb-8 font-playfair">Get happy. Not sober</h2>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <Link 
             href="https://open.spotify.com/show/5GitagiLVjEfhWuOcdexeS" 
