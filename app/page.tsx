@@ -17,32 +17,49 @@ const meta = {
 }
 
 const Hero = () => (
-  <div className="relative h-screen bg-cover bg-[70%_center] md:bg-center" style={{backgroundImage: "url('/hero.webp')"}}>
-    <div className="absolute inset-0 flex items-start md:items-center pt-20 md:pt-0 justify-start pl-6 md:pl-16 lg:pl-24">
-      <div className="text-[#46474c] z-10 w-full max-w-[80%] md:max-w-full text-left">
-        <h1 className="text-7xl md:text-8xl font-bold mb-4 tracking-tight">Get Happy.</h1>
-        <h2 className="text-6xl md:text-7xl font-semibold mb-4 tracking-tight">Not &quot;Sober.&quot;</h2>
-        <h3 className="text-5xl md:text-6xl font-bold tracking-tight">It&apos;s Not About<br className="md:hidden" /> the Alcohol.</h3>
+  <div className="relative min-h-screen flex flex-col md:flex-row">
+    <div className="w-full md:w-1/2 flex items-center justify-start px-6 md:pl-16 lg:pl-24 py-24 md:py-0">
+      <div className="text-[#46474c] z-10 w-full max-w-[600px]">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight pt-10 md:pt-0">Get Happy.</h1>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 tracking-tight">Not &quot;Sober.&quot;</h2>
+        <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-10">It&apos;s Not About<br className="md:hidden" /> the Alcohol.</h3>
+        <Link 
+          href="https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website" 
+          className="inline-flex items-center justify-center px-6 py-4 text-lg md:text-xl font-bold rounded-md text-[#46474c] bg-[#f1c4c4] hover:bg-[#bda5a3] transition-all duration-300 shadow-md hover:shadow-lg font-montserrat"
+        >
+          Book a Free Discovery Call
+          <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+        </Link>
       </div>
+    </div>
+    <div className="w-full md:w-1/2 h-[50vh] md:h-auto relative">
+      <Image 
+        src="/newimages/3.jpg" 
+        alt="Hero image" 
+        fill
+        className="object-cover md:object-right"
+        priority
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
     </div>
   </div>
 )
 
 const BecomeUnfuckwithable = () => (
-  <div className="bg-[#fff8f7] py-20">
+  <div className="bg-[#f9f5f2] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+      <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+          <div className="w-full md:w-1/2 mt-8 md:mt-0">
             <Image 
-              src="/1.jpg" 
+              src="/newimages/7.jpg" 
               alt="Book a Discovery Call" 
               width={600} 
               height={600} 
-              className="rounded-lg" 
+              className="rounded-lg w-full" 
             />
           </div>
-          <div className="md:w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="text-4xl font-bold text-[#46474c] mb-12 font-playfair">Become <span className="italic">Unfuckwithable.</span></h2>
             <h3 className="text-2xl md:text-3xl font-bold text-[#46474c] mb-6 font-playfair">Are you sick and tired of feeling powerless and stuck?</h3>
             <p className="text-lg md:text-xl text-[#46474c] mb-6 font-montserrat">My free consultation isn&apos;t just a chat—it&apos;s a sliding door moment.</p>
@@ -70,7 +87,7 @@ const BecomeUnfuckwithable = () => (
 const EmotionalSobrietyCourse = () => (
   <div className="bg-[#ffeae6] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+      <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#46474c] mb-4 font-playfair">Get Happy. Not Sober.</h2>
           <h3 className="text-xl md:text-2xl font-bold text-[#46474c] mb-8 font-playfair">FREE PRIVATE PODCAST TRAINING</h3>
@@ -99,7 +116,7 @@ const EmotionalSobrietyCourse = () => (
 )
 
 const NewsletterForm = () => (
-  <div className="bg-[#fff8f7] py-20">
+  <div className="bg-[#f9f5f2] py-20">
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="_form_4"></div>
       <Script 
@@ -111,13 +128,13 @@ const NewsletterForm = () => (
 )
 
 const AlcoholProblemSection = () => (
-  <div className="bg-[#fff8f7] py-20">
+  <div className="bg-[#f9f5f2] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+      <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <Image 
-              src="/boardwalk.jpeg" 
+              src="/newimages/9.jpg" 
               alt="Boardwalk" 
               width={600} 
               height={400} 
@@ -167,11 +184,11 @@ const AlcoholProblemSection = () => (
 const EmotionalSobrietySection = () => (
   <div className="bg-[#ffeae6] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+      <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
         <div className="flex flex-col md:flex-row-reverse items-center gap-12">
           <div className="md:w-1/2">
             <Image 
-              src="/5.jpg" 
+              src="/newimages/10.png" 
               alt="Ocean" 
               width={600} 
               height={400} 
@@ -243,13 +260,13 @@ const ManifestationRetreat = () => (
 ) */
 
 const AboutColleen = () => (
-  <div className="bg-[#fff8f7] py-20">
+  <div className="bg-[#f9f5f2] py-20">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+      <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <Image 
-              src="/2.png" 
+              src="/newimages/6.jpg" 
               alt="Colleen" 
               width={500} 
               height={500} 
@@ -314,7 +331,7 @@ const TransformationsGrid = () => (
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#fff8f7]">
+    <div className="min-h-screen bg-[#f9f5f2]">
       <MetaComponent {...meta} />
       <Navbar />
       <main>

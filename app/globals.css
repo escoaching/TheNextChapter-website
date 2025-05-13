@@ -121,3 +121,22 @@
     transition-duration: 300ms;
   }
 }
+
+/* Spotify Player Customization */
+iframe[src*="spotify.com/embed"] {
+  background-color: #f1c4c4 !important;
+}
+
+/* Force all Spotify player elements to have our brand color */
+.SpotifyPlayer {
+  background-color: #f1c4c4 !important;
+}
+
+.SpotifyPlayer * {
+  background-color: #f1c4c4 !important;
+}
+
+/* Override specific Spotify player classes */
+[class*="spotify"], [class*="Spotify"], [id*="spotify"], [id*="Spotify"] {
+  background-color: #f1c4c4 !important;
+}

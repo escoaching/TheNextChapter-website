@@ -17,18 +17,18 @@ const meta = {
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-[#fff8f7]">
+    <div className="min-h-screen bg-[#f9f5f2]">
       <MetaComponent {...meta} />
       <Navbar />
 
       <main className="pt-20">
-        <section className="py-20 bg-[#fff8f7]">
+        <section className="py-20 bg-[#f9f5f2]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+            <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2">
                   <Image 
-                    src="/proheadshot.webp" 
+                    src="/newimages/8.jpg" 
                     alt="Colleen Kachmann" 
                     width={400} 
                     height={400} 
@@ -50,11 +50,11 @@ const AboutPage = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-[#46474c]">Meet Colleen Kachmann</h2>
             <h3 className="text-xl md:text-2xl mb-12 text-center text-[#46474c]">Master life coach and addiction recovery specialist</h3>
-            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+            <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2">
                   <Image 
-                    src="/2.png" 
+                    src="/newimages/12.png" 
                     alt="Colleen Kachmann" 
                     width={500} 
                     height={500} 
@@ -85,7 +85,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-[#fff8f7]">
+        <section className="py-20 bg-[#f9f5f2]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-[#46474c]">It&apos;s Not About the Alcohol</h2>
             <div className="max-w-3xl mx-auto space-y-6">
@@ -96,7 +96,7 @@ const AboutPage = () => {
             </div>
             <div className="mt-12">
               <Image 
-                src="/4.jpg" 
+                src="/newimages/1.jpg" 
                 alt="Colleen in nature" 
                 width={500} 
                 height={500} 
@@ -106,13 +106,13 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-[#fff8f7]">
+        <section className="py-20 bg-[#f9f5f2]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#fff8f7] rounded-lg shadow-xl p-8 md:p-12">
+            <div className="bg-[#f9f5f2] rounded-lg shadow-xl p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2">
                   <Image 
-                    src="/3.png" 
+                    src="/newimages/4.jpg" 
                     alt="Colleen walking in nature" 
                     width={500} 
                     height={500} 

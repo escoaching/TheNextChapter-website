@@ -8,8 +8,6 @@ export default function Footer() {
     { href: '/about-TNC', label: 'Program' },
     { href: '/about-colleen', label: 'About' },
     { href: 'https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website', label: 'Book Discovery Call' },
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms & Conditions' },
   ]
 
   const socialLinks = [
@@ -20,46 +18,79 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#f1c4c4] text-[#46474c] py-8 md:py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="mb-6 md:mb-0 order-2 md:order-1">
-            <div className="flex justify-center md:justify-start space-x-6">
-              {socialLinks.map((social) => (
-                <Link 
-                  key={social.alt}
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="transform hover:scale-110 transition-all duration-300"
-                >
-                  <Image 
-                    src={social.icon} 
-                    alt={social.alt} 
-                    width={64} 
-                    height={64} 
-                    className="hover:opacity-80 transition-opacity duration-300" 
-                  />
-                </Link>
-              ))}
-            </div>
-            <p className="text-sm md:text-base mt-4 text-center md:text-left text-[#46474c] font-montserrat">
-              ©2025 Emotional Sobriety Coaching
-            </p>
-          </div>
-          <div className="order-1 md:order-2 mb-6 md:mb-0">
-            <ul className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
+    <footer className="bg-[#f1c4c4] text-[#46474c]">
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        {/* Logo centered at top */}
+        <div className="flex justify-center mb-10">
+          <Image 
+            src="/pinklogo.png" 
+            alt="Emotional Sobriety Coaching" 
+            width={180} 
+            height={180} 
+            className="mx-auto"
+          />
+        </div>
+        
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          {/* Navigation links */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-lg font-bold mb-6 text-[#46474c]">Quick Links</h3>
+            <ul className="flex flex-col space-y-4 items-center">
               {footerLinks.map((link) => (
-                <li key={link.href} className="mb-2 md:mb-0">
+                <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-sm md:text-base hover:text-[#bda5a3] transition-all duration-300 font-montserrat font-bold"
+                    className="text-[#46474c] hover:text-[#bda5a3] transition-all duration-300 text-base font-medium"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
+          
+          {/* Social links */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-lg font-bold mb-6 text-[#46474c]">Connect With Us</h3>
+            <ul className="flex flex-col space-y-4 items-center">
+              {socialLinks.map((social) => (
+                <li key={social.alt}>
+                  <Link 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#46474c] hover:text-[#bda5a3] transition-all duration-300 flex items-center"
+                  >
+                    <Image 
+                      src={social.icon} 
+                      alt={social.alt} 
+                      width={18} 
+                      height={18}
+                      className="mr-2"
+                    />
+                    <span className="text-base font-medium">{social.alt}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        
+        {/* Copyright bar */}
+        <div className="border-t border-[#e6b3b3] mt-10 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center gap-2">
+            <p className="text-sm font-medium">
+              ©2025 Emotional Sobriety Coaching. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <Link href="/privacy-policy" className="text-sm hover:text-[#bda5a3] font-medium">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-sm hover:text-[#bda5a3] font-medium">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

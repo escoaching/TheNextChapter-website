@@ -29,17 +29,17 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-[#46474c] shadow-lg fixed w-full z-10">
+    <nav className="bg-[#46474c] shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <div className="flex-shrink-0 flex items-center h-20 overflow-hidden">
-            <Link href="/" className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center py-2">
+            <Link href="/" className="flex-shrink-0">
               <Image 
                 src="/logo.png" 
                 alt="TNC Logo" 
-                width={600} 
-                height={180} 
-                className="h-32 w-auto transform hover:scale-105 transition-all duration-300" 
+                width={300} 
+                height={90} 
+                className="w-auto h-14 md:h-24 transform hover:scale-105 transition-all duration-300" 
               />
             </Link>
           </div>
@@ -71,8 +71,8 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-[#46474c] relative z-20">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-[#46474c] absolute top-20 inset-x-0 z-50 shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {filteredNavItems.map((item) => (
               <Link
                 key={item.href}

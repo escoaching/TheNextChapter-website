@@ -74,14 +74,14 @@ const PodcastHero = () => (
 )
 
 const LatestEpisode = () => (
-  <div className="bg-white py-16">
+  <div className="bg-[#fff8f7] py-16">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-[#46474c] mb-4 font-playfair">Latest Podcast</h2>
         <div className="mb-8">
           <iframe 
             title="Embed Player" 
-            src="https://play.libsyn.com/embed/destination/id/3731100/height/612/theme/modern/size/extra-large/thumbnail/yes/custom-color/f2e2df/video-height/200/playlist-height/200/direction/backward/download/yes/font-color/46474d" 
+            src="https://play.libsyn.com/embed/destination/id/3731100/height/612/theme/modern/size/extra-large/thumbnail/yes/custom-color/f1c4c4/video-height/200/playlist-height/200/direction/backward/download/yes/font-color/46474d" 
             height="612" 
             width="100%" 
             scrolling="no" 
@@ -220,7 +220,7 @@ const AboutColleen = () => (
       <div className="flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/2">
           <Image 
-            src="/3.png" 
+            src="/newimages/8.jpg" 
             alt="Colleen Kachmann" 
             width={600} 
             height={600} 

@@ -17,7 +17,7 @@ const meta = {
 }
 
 const PodcastHero = () => (
-  <div className="relative pt-28 md:pt-28 bg-[#fff8f7] pb-2">
+  <div className="relative pt-28 md:pt-28 bg-[#f9f5f2] pb-2">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h1 className="text-5xl md:text-6xl font-bold text-[#46474c] mb-4 font-playfair">Reduce Your Drinking by 80%</h1>
@@ -47,31 +47,48 @@ const PodcastHero = () => (
   </div>
 )
 
-const LatestEpisode = () => (
-  <div className="bg-white pt-16">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-[#46474c] mb-4 font-playfair">Listen Now</h2>
-        <div className="mb-4">
-          <iframe 
-            style={{borderRadius: '12px'}} 
-            src="https://open.spotify.com/embed/show/0TqDqfrMHwVVvjtVJEY10C?utm_source=generator" 
-            width="100%" 
-            height="500"
-            frameBorder="0" 
-            allowFullScreen 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy"
-            title="Spotify Embed Player Reduce Your Drinking by 80%"
-          ></iframe>
+const LatestEpisode = () => {
+  return (
+    <div className="bg-white pt-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#46474c] mb-4 font-playfair">Listen Now</h2>
+          
+          <div 
+            className="mb-8 rounded-xl overflow-hidden shadow-lg"
+            style={{
+              backgroundColor: '#f1c4c4',
+              padding: '2rem',
+              width: '100%',
+              maxWidth: '800px',
+              margin: '0 auto',
+              textAlign: 'center'
+            }}
+          >
+            <h3 className="text-2xl font-bold text-[#46474c] mb-6 font-playfair">
+              Reduce Your Drinking by 80%
+            </h3>
+            <p className="text-[#46474c] mb-6 font-montserrat">
+              Listen to this special podcast series by Colleen Kachmann to learn practical strategies for emotional sobriety.
+            </p>
+            <Link
+              href="https://open.spotify.com/show/0TqDqfrMHwVVvjtVJEY10C"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-md text-white bg-[#46474c] hover:bg-[#bda5a3] transition-all duration-300 shadow-sm hover:shadow-md font-montserrat"
+            >
+              OPEN IN SPOTIFY
+              <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-)
+  );
+};
 
 const PodcastBenefits = () => (
-  <div className="bg-[#fff8f7] pt-2 pb-16">
+  <div className="bg-[#f9f5f2] pt-2 pb-16">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl font-bold text-center text-[#46474c] mb-12 font-playfair">IF YOU WANT TO...</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

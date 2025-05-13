@@ -17,12 +17,12 @@ const meta = {
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-[#fff8f7]">
+    <div className="min-h-screen bg-[#f9f5f2]">
       <MetaComponent {...meta} />
       <Navbar />
 
       <main className="pt-20">
-        <section className="bg-[#fff8f7] py-20 px-4 md:px-8 lg:px-16">
+        <section className="bg-[#f9f5f2] py-20 px-4 md:px-8 lg:px-16">
           <div className="text-center mb-12">
             <Image 
               src="/TNCLOGOGRAY.png" 
@@ -132,13 +132,13 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-[#fff8f7]">
+        <section className="py-20 bg-[#f9f5f2]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="md:w-1/2">
                   <Image
-                    src="/altflowers.jpeg"
+                    src="/newimages/2.jpg"
                     alt="Woman walking in a field"
                     width={600}
                     height={800}
