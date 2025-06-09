@@ -15,13 +15,13 @@ const meta = {
 
 const CalendlyPage = () => {
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = "https://assets.calendly.com/assets/external/widget.js"
-    script.async = true
-    document.body.appendChild(script)
-
+    // Remove script loading since it's handled by the Script component
     return () => {
-      document.body.removeChild(script)
+      // Cleanup only if we find the script
+      const scriptEl = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (scriptEl && scriptEl.parentNode) {
+        scriptEl.parentNode.removeChild(scriptEl);
+      }
     }
   }, [])
 
@@ -37,7 +37,7 @@ const CalendlyPage = () => {
         </p>
         <div 
           className="calendly-inline-widget w-full" 
-          data-url="https://calendly.com/next-chapter-team/the-next-chapter-discovery-call" 
+          data-url="https://calendly.com/next-chapter-team/the-next-chapter-discovery-call?utm_source=website&utm_medium=discovery_page&utm_campaign=book_discovery" 
           style={{ minWidth: '320px', height: 'calc(100vh - 180px)', maxHeight: '1000px' }}
         ></div>
       </main>
@@ -53,6 +53,32 @@ const CalendlyPage = () => {
               var script = document.createElement('script');
               script.src = 'https://assets.calendly.com/assets/external/widget.js';
               document.body.appendChild(script);
+              
+              // Add UTM tracking to Calendly if it comes from the URL
+              window.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmSource = urlParams.get('utm_source');
+                const utmMedium = urlParams.get('utm_medium');
+                const utmCampaign = urlParams.get('utm_campaign');
+                
+                const calendlyWidget = document.querySelector('.calendly-inline-widget');
+                if (calendlyWidget) {
+                  let calendlyUrl = new URL(calendlyWidget.getAttribute('data-url'));
+                  
+                  // Set default UTM parameters if not passed in URL
+                  if (!calendlyUrl.searchParams.has('utm_source')) {
+                    calendlyUrl.searchParams.set('utm_source', utmSource || 'website');
+                  }
+                  if (!calendlyUrl.searchParams.has('utm_medium')) {
+                    calendlyUrl.searchParams.set('utm_medium', utmMedium || 'discovery_page');
+                  }
+                  if (!calendlyUrl.searchParams.has('utm_campaign')) {
+                    calendlyUrl.searchParams.set('utm_campaign', utmCampaign || 'book_discovery');
+                  }
+                  
+                  calendlyWidget.setAttribute('data-url', calendlyUrl.toString());
+                }
+              });
             }
           `,
         }}
