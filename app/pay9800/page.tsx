@@ -25,7 +25,7 @@ const meta = {
   title: "The Next Chapter 1-YEAR CONTAINER",
   description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay5000"
+  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
@@ -170,6 +170,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       setLoading(false);
     }
   };
+
   
   return (
     <>
@@ -302,7 +303,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   
         <button
           disabled={!stripe || loading}
-          className="w-full p-4 bg-[#f1c4c4] text-[#46474c] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
+          className="w-full p-4 bg-[#f1c4c4] text-[#fff8f7] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
         >
           {!loading ? `Pay $${amount}` : "Processing..."}
         </button>
@@ -362,7 +363,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 5000
+  const amount = 9800
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -522,14 +523,11 @@ export default function PayPage() {
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
-                  <form name="PrePage" method="post" action="https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx">
-                    <input type="hidden" name="LinkId" value="561f42db-a41e-43e9-a1ba-3c506f5b2373" />
-                    <input type="image" src="//content.authorize.net/images/buy-now-gray.gif" alt="Buy with HSA/FSA" />
-                  </form>
+                  <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="115c472a-52db-46f3-b7cf-e8b36820888d" /> <input type = "image" src ="//content.authorize.net/images/buy-now-gold.gif" /> </form>
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  {isMounted && <ShopifyBuyButton domId="product-component-1749969782735" productId="15339621056585" options={shopifyButtonOptions} />}
+                  {isMounted && <ShopifyBuyButton domId="product-component-1749969985606" productId="15339624169545" options={shopifyButtonOptions} />}
                 </div>
               </div>
             </div>

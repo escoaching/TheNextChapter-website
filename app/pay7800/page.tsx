@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
+import dynamic from 'next/dynamic'
 
 import {
   useStripe,
@@ -15,6 +16,10 @@ import { CheckCircle } from 'lucide-react'
 import MetaComponent from "../MetaComponent"
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+const ShopifyBuyButton = dynamic(() => import('@/components/ShopifyBuyButton'), {
+  ssr: false,
+});
 
 const meta = {
   title: "The Next Chapter 1-YEAR CONTAINER",
@@ -359,6 +364,119 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 
 export default function PayPage() {
   const amount = 7800
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const shopifyButtonOptions = {
+    "product": {
+      "styles": {
+        "product": {
+          "@media (min-width: 601px)": {
+            "max-width": "calc(25% - 20px)",
+            "margin-left": "20px",
+            "margin-bottom": "50px"
+          }
+        },
+        "button": {
+          "width": "100%",
+          "padding": "1rem",
+          "margin-top": "1.5rem",
+          "border-radius": "0.375rem",
+          "font-weight": "bold",
+          "color": "#fff8f7",
+          "background-color": "#f1c4c4",
+          ":hover": {
+            "background-color": "#d9b0b0"
+          },
+          ":focus": {
+            "background-color": "#d9b0b0"
+          }
+        }
+      },
+      "buttonDestination": "checkout",
+      "contents": {
+        "img": false,
+        "title": false,
+        "price": false
+      },
+      "text": {
+        "button": "Checkout with Affirm"
+      }
+    },
+    "productSet": {
+      "styles": {
+        "products": {
+          "@media (min-width: 601px)": {
+            "margin-left": "-20px"
+          }
+        }
+      }
+    },
+    "modalProduct": {
+      "contents": {
+        "img": false,
+        "imgWithCarousel": true,
+        "button": false,
+        "buttonWithQuantity": true
+      },
+      "styles": {
+        "product": {
+          "@media (min-width: 601px)": {
+            "max-width": "100%",
+            "margin-left": "0px",
+            "margin-bottom": "0px"
+          }
+        },
+        "button": {
+          ":hover": {
+            "background-color": "#d9b0b0"
+          },
+          "background-color": "#f1c4c4",
+          ":focus": {
+            "background-color": "#d9b0b0"
+          }
+        }
+      },
+      "text": {
+        "button": "Add to cart"
+      }
+    },
+    "option": {},
+    "cart": {
+      "styles": {
+        "button": {
+          ":hover": {
+            "background-color": "#d9b0b0"
+          },
+          "background-color": "#f1c4c4",
+          ":focus": {
+            "background-color": "#d9b0b0"
+          }
+        }
+      },
+      "text": {
+        "total": "Subtotal",
+        "notice": "",
+        "button": "Checkout"
+      }
+    },
+    "toggle": {
+      "styles": {
+        "toggle": {
+          "background-color": "#f1c4c4",
+          ":hover": {
+            "background-color": "#d9b0b0"
+          },
+          ":focus": {
+            "background-color": "#d9b0b0"
+          }
+        }
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#fff8f7] flex flex-col">
@@ -406,6 +524,10 @@ export default function PayPage() {
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
                   <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="115c472a-52db-46f3-b7cf-e8b36820888d" /> <input type = "image" src ="//content.authorize.net/images/buy-now-gold.gif" /> </form>
+                </div>
+                <div className="mt-8">
+                  <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
+                  {isMounted && <ShopifyBuyButton domId="product-component-1749969849232" productId="15339624104009" options={shopifyButtonOptions} />}
                 </div>
               </div>
             </div>
