@@ -16,20 +16,20 @@ import MetaComponent from "../MetaComponent"
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
+// Shopify Buy Button types - third party library
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 const meta = {
-  title: "The Next Chapter 1-YEAR CONTAINER",
-  description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  title: "Embodiment Track - $3500",
+  description: "This path is for the woman who's ready to deepen her emotional resilience, reclaim her energy, and become a steady, grounded presence in every room she walks into.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
+  pageUrl: "https://emotionalsobrietycoaching.com/embodiment3500"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined")
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
-
-// Shopify Buy Button types - third party library
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const CheckoutPage = ({ amount }: { amount: number }) => {
   const stripe = useStripe()
@@ -303,7 +303,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           disabled={!stripe || loading}
           className="w-full p-4 bg-[#f1c4c4] text-[#fff8f7] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
         >
-          {!loading ? `Pay $${amount}` : "Processing..."}
+          {!loading ? `Pay $${amount.toLocaleString()}` : "Processing..."}
         </button>
       </form>
     </>
@@ -360,8 +360,8 @@ const OrderSummary = ({ amount }: { amount: number }) => (
   </div>
 )
 
-export default function PayPage() {
-  const amount = 5800
+export default function Embodiment3500Page() {
+  const amount = 3500
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -402,120 +402,120 @@ export default function PayPage() {
 
         (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
           ui.createComponent('product', {
-            id: '15348966555721',
-            node: document.getElementById('product-component-1750471943382'),
+            id: '15348971536457',
+            node: document.getElementById('product-component-1750473070988'),
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
-    "product": {
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px"
-          }
-        },
-        "button": {
-          "width": "100%",
-          "padding": "1rem",
-          "margin-top": "1.5rem",
-          "border-radius": "0.375rem",
-          "font-weight": "bold",
-          "color": "#fff8f7",
-          "background-color": "#f1c4c4",
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "buttonDestination": "checkout",
-      "contents": {
-        "img": false,
-        "title": false,
-        "price": false
-      },
-      "text": {
-        "button": "Checkout with Affirm"
-      }
-    },
-    "productSet": {
-      "styles": {
-        "products": {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px"
-          }
-        }
-      }
-    },
-    "modalProduct": {
-      "contents": {
-        "img": false,
-        "imgWithCarousel": true,
-        "button": false,
-        "buttonWithQuantity": true
-      },
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "100%",
-            "margin-left": "0px",
-            "margin-bottom": "0px"
-          }
-        },
-        "button": {
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          "background-color": "#f1c4c4",
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "text": {
-        "button": "Add to cart"
-      }
-    },
-    "option": {},
-    "cart": {
-      "styles": {
-        "button": {
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          "background-color": "#f1c4c4",
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "text": {
-        "total": "Subtotal",
-        "notice": "",
-        "button": "Checkout"
-      }
-    },
-    "toggle": {
-      "styles": {
-        "toggle": {
-          "background-color": "#f1c4c4",
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      }
+              "product": {
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "calc(25% - 20px)",
+                      "margin-left": "20px",
+                      "margin-bottom": "50px"
+                    }
+                  },
+                  "button": {
+                    "width": "100%",
+                    "padding": "1rem",
+                    "margin-top": "1.5rem",
+                    "border-radius": "0.375rem",
+                    "font-weight": "bold",
+                    "color": "#fff8f7",
+                    "background-color": "#f1c4c4",
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "buttonDestination": "checkout",
+                "contents": {
+                  "img": false,
+                  "title": false,
+                  "price": false
+                },
+                "text": {
+                  "button": "Checkout with Affirm"
+                }
+              },
+              "productSet": {
+                "styles": {
+                  "products": {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "-20px"
+                    }
+                  }
+                }
+              },
+              "modalProduct": {
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true
+                },
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  "button": {
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    "background-color": "#f1c4c4",
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to cart"
+                }
+              },
+              "option": {},
+              "cart": {
+                "styles": {
+                  "button": {
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    "background-color": "#f1c4c4",
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "text": {
+                  "total": "Subtotal",
+                  "notice": "",
+                  "button": "Checkout"
+                }
+              },
+              "toggle": {
+                "styles": {
+                  "toggle": {
+                    "background-color": "#f1c4c4",
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                }
               }
             },
           });
         });
-    }
-  };
+      }
+    };
 
     loadShopifyBuyButton();
   }, [isMounted]);
@@ -531,38 +531,65 @@ export default function PayPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between">
               <div>
-                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">The Next Chapter 1-YEAR CONTAINER</h1>
+                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">Embodiment Track</h1>
                 <p className="mb-6 text-[#46474c] text-lg font-montserrat">
-                  Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
+                  This path is for the woman who&apos;s ready to deepen her emotional resilience, reclaim her energy, and become a steady, grounded presence in every room she walks into. 
                 </p>
-                <p className="text-2xl font-semibold mb-8 text-[#46474c] font-playfair">Get Happy. Not Sober.</p>
+                <p className="mb-8 text-[#46474c] text-lg font-montserrat">
+                  No pressure to change jobs or start a business — this track is help you think and communicate from a place of power and emotional sobriety.
+                </p>
 
-                <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">THIS PACKAGE INCLUDES THE FOLLOWING</h2>
+                <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">What&apos;s Inside:</h2>
 
+                <h3 className="text-2xl font-bold mb-4 text-[#46474c] font-playfair">Live Practice & Support</h3>
                 <FeatureItem 
-                  title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
+                  title="Monthly Coaching Calls"
+                  description="4 monthly coaching calls focused on skill-building and real-time practice"
                 />
                 <FeatureItem 
-                  title="Small Group Accountability calls"
-                  description="Meet with your small accountability group each week to share wins, work on skills and set goals for the following week."
+                  title="Weekly Small-Group Labs"
+                  description="Weekly small-group labs for Q&A and personal application"
+                />
+
+                <h3 className="text-2xl font-bold mb-4 mt-8 text-[#46474c] font-playfair">12-Month Learning Journey</h3>
+                <FeatureItem 
+                  title="Monthly Curriculum"
+                  description="Monthly curriculum on core skills, demos, and guided practices"
                 />
                 <FeatureItem 
-                  title="The Next Chapter Resource Guide"
-                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
+                  title="Reflection & Action"
+                  description="Reflection prompts and real-world action steps"
+                />
+
+                <h3 className="text-2xl font-bold mb-4 mt-8 text-[#46474c] font-playfair">Integration Tools & Community</h3>
+                <FeatureItem 
+                  title="Workshop Exercises"
+                  description="Workshop and reflection exercises to keep you focused and grounded"
                 />
                 <FeatureItem 
-                  title="Audio-only content delivery via secret podcast feed"
-                  description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
+                  title="Partner Practice"
+                  description="Optional partner practice for deeper support"
                 />
                 <FeatureItem 
-                  title="Community Platform on Discord"
-                  description="(completely private and not connected to social media) provides you with support 7 days per week."
+                  title="Private Sisterhood"
+                  description="A private sisterhood of women walking this same path"
                 />
-                <FeatureItem 
-                  title="Bonus Resources"
-                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
-                />
+
+                <h3 className="text-2xl font-bold mb-4 mt-8 text-[#46474c] font-playfair">You&apos;ll Learn How To:</h3>
+                <ul className="space-y-2 mb-8">
+                  <li className="text-base text-[#46474c] font-montserrat">• Set boundaries without guilt</li>
+                  <li className="text-base text-[#46474c] font-montserrat">• Regulate your nervous system and lead from presence</li>
+                  <li className="text-base text-[#46474c] font-montserrat">• Stop people-pleasing and start honoring yourself</li>
+                  <li className="text-base text-[#46474c] font-montserrat">• Navigate hard conversations without losing your center</li>
+                  <li className="text-base text-[#46474c] font-montserrat">• Use coaching tools to deepen connection and defuse drama</li>
+                </ul>
+
+                <p className="text-xl font-semibold mb-4 text-[#46474c] font-playfair">
+                  This is the inner work that becomes your outer strength.
+                </p>
+                <p className="text-lg mb-8 text-[#46474c] font-montserrat">
+                  And you&apos;re exactly where you need to be to begin.
+                </p>
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
@@ -570,12 +597,12 @@ export default function PayPage() {
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  <div id='product-component-1750471943382'></div>
+                  <div id='product-component-1750473070988'></div>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 flex flex-col justify-between">
-              <Image src="/TNC1Year.webp" alt="TNC 1 Year Program" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
+              <Image src="/TNC1Year.webp" alt="Embodiment Track" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
               <div className="sticky top-4">
                 <OrderSummary amount={amount} />
                 <Elements
@@ -608,4 +635,4 @@ export default function PayPage() {
       <Footer />
     </div>
   )
-}
+} 

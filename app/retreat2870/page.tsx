@@ -17,10 +17,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const meta = {
-  title: "The Next Chapter 1-YEAR CONTAINER",
-  description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  title: "ES Manifestation Retreat - $2,870",
+  description: "At the ES Manifestation Retreat, you'll gain the tools and skills to create real, lasting change.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
+  pageUrl: "https://emotionalsobrietycoaching.com/retreat2870"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
@@ -118,19 +118,16 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     if (paymentIntent) {
       switch (paymentIntent.status) {
         case 'succeeded':
-          // Payment was successful
           window.location.href = '/payment-success';
           break;
         case 'processing':
           setErrorMessage("Your payment is processing. Please wait...");
-          // Keep the loading state active while processing
           break;
         case 'requires_payment_method':
           setErrorMessage("Your payment was not successful, please try again.");
           setLoading(false);
           break;
         case 'requires_action':
-          // For payment methods that require additional steps (like Affirm)
           try {
             const { error: confirmError, paymentIntent: confirmedIntent } = await stripe.confirmPayment({
               clientSecret,
@@ -303,13 +300,14 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           disabled={!stripe || loading}
           className="w-full p-4 bg-[#f1c4c4] text-[#fff8f7] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
         >
-          {!loading ? `Pay $${amount}` : "Processing..."}
+          {!loading ? `Pay $${amount.toLocaleString()}` : "Processing..."}
         </button>
       </form>
     </>
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FeatureItem = ({ title, description }: { title: string; description: string }) => (
   <div className="flex items-start space-x-3 mb-4">
     <CheckCircle className="h-6 w-6 text-[#f1c4c4] flex-shrink-0 mt-1" />
@@ -361,7 +359,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 5800
+  const amount = 2870
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -402,8 +400,8 @@ export default function PayPage() {
 
         (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
           ui.createComponent('product', {
-            id: '15348966555721',
-            node: document.getElementById('product-component-1750471943382'),
+            id: '15348977205321',
+            node: document.getElementById('product-component-1750475389887'),
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
     "product": {
@@ -531,38 +529,86 @@ export default function PayPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between">
               <div>
-                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">The Next Chapter 1-YEAR CONTAINER</h1>
+                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">ES Manifestation Retreat</h1>
                 <p className="mb-6 text-[#46474c] text-lg font-montserrat">
-                  Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
+                  At the ES Manifestation Retreat, you&apos;ll gain the tools and skills to create real, lasting change:
                 </p>
-                <p className="text-2xl font-semibold mb-8 text-[#46474c] font-playfair">Get Happy. Not Sober.</p>
 
-                <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">THIS PACKAGE INCLUDES THE FOLLOWING</h2>
+                <div className="mb-8">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-3 text-[#46474c] font-playfair">Practical explanations:</h3>
+                    <p className="text-[#46474c] text-lg font-montserrat">Stop relying on good behavior to avoid bad feelings. Learn how to process shame and fear so you are safe with yourself no matter what happens.</p>
+                  </div>
 
-                <FeatureItem 
-                  title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
-                />
-                <FeatureItem 
-                  title="Small Group Accountability calls"
-                  description="Meet with your small accountability group each week to share wins, work on skills and set goals for the following week."
-                />
-                <FeatureItem 
-                  title="The Next Chapter Resource Guide"
-                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
-                />
-                <FeatureItem 
-                  title="Audio-only content delivery via secret podcast feed"
-                  description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
-                />
-                <FeatureItem 
-                  title="Community Platform on Discord"
-                  description="(completely private and not connected to social media) provides you with support 7 days per week."
-                />
-                <FeatureItem 
-                  title="Bonus Resources"
-                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
-                />
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-3 text-[#46474c] font-playfair">Actionable Steps:</h3>
+                    <p className="text-[#46474c] text-lg font-montserrat">Learn how to set positive emotional goals that will attract what you want instead of what you don&apos;t want.</p>
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold mb-3 text-[#46474c] font-playfair">Measurable Changes:</h3>
+                    <p className="text-[#46474c] text-lg font-montserrat">Realistic expectations are key. There will be no improvements until you give yourself credit for the improvements you&apos;ve already made.</p>
+                  </div>
+
+                  <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">✨ What You Get ✨</h2>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">3 nights & 2 days fully immersed in deep transformation</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Surrounded by nature, powerful energy, and a like-minded community</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Fully chef-catered gourmet meals</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Transformative teachings on manifestation & the law of attraction</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">How to manifest a better relationship with alcohol—without willpower</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Guided embodiment practices like breathwork, yoga, and meditation</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Luxury accommodations designed for rest and renewal</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Access to breathtaking trails and serene lake views</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Connection, sisterhood, and the space to rewrite your story</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 bg-[#f9f9f9] p-6 rounded-lg">
+                    <h3 className="text-xl font-bold mb-4 text-[#46474c] font-playfair">Beyond the retreat&apos;s transformative sessions...</h3>
+                    <p className="text-[#46474c] font-montserrat mb-4">You&apos;ll also have the opportunity to:</p>
+                    <div className="space-y-2">
+                      <p className="text-[#46474c] font-montserrat">*Explore scenic hiking trails that immerse you in nature&apos;s healing energy.</p>
+                      <p className="text-[#46474c] font-montserrat">*Participate in yoga sessions designed to center your mind and body.</p>
+                      <p className="text-[#46474c] font-montserrat">*Enjoy delicious, nourishing meals prepared by the onsite chef, crafted to fuel your journey.</p>
+                      <p className="text-[#46474c] font-montserrat">*Relax and reflect in this architecturally stunning retreat center, blending artistry with nature.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 bg-[#fff8f7] p-6 rounded-lg border border-[#f1c4c4]">
+                    <p className="text-lg font-semibold text-[#46474c] mb-3 font-montserrat">Get the manifestation tools that allow you to access higher levels of consciousness so that you no longer have to stress over problems that don&apos;t exist where you want to be.</p>
+                    <p className="text-lg italic text-[#46474c] mb-3 font-montserrat">Your frequency is what you &quot;frequently see&quot; in your reality.</p>
+                    <p className="text-xl font-bold text-[#46474c] font-playfair">Moment of Clarity...</p>
+                    <p className="text-lg text-[#46474c] font-montserrat">The only way to access the reality you want to live in is to act like it&apos;s already happening.</p>
+                  </div>
+                </div>
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
@@ -570,12 +616,12 @@ export default function PayPage() {
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  <div id='product-component-1750471943382'></div>
+                  <div id='product-component-1750475389887'></div>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 flex flex-col justify-between">
-              <Image src="/TNC1Year.webp" alt="TNC 1 Year Program" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
+              <Image src="/retreat.png" alt="ES Manifestation Retreat" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
               <div className="sticky top-4">
                 <OrderSummary amount={amount} />
                 <Elements
@@ -608,4 +654,4 @@ export default function PayPage() {
       <Footer />
     </div>
   )
-}
+} 

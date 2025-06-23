@@ -17,10 +17,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const meta = {
-  title: "The Next Chapter 1-YEAR CONTAINER",
-  description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  title: "TNC ESC Bundle - Complete Transformation Package",
+  description: "The complete transformation—personal and professional. TNC 1-Year Container plus ESC Professional Certification.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
+  pageUrl: "https://emotionalsobrietycoaching.com/tncescbundle"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
@@ -303,13 +303,14 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           disabled={!stripe || loading}
           className="w-full p-4 bg-[#f1c4c4] text-[#fff8f7] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
         >
-          {!loading ? `Pay $${amount}` : "Processing..."}
+          {!loading ? `Pay $${amount.toLocaleString()}` : "Processing..."}
         </button>
       </form>
     </>
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FeatureItem = ({ title, description }: { title: string; description: string }) => (
   <div className="flex items-start space-x-3 mb-4">
     <CheckCircle className="h-6 w-6 text-[#f1c4c4] flex-shrink-0 mt-1" />
@@ -361,7 +362,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 5800
+  const amount = 18980
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -402,8 +403,8 @@ export default function PayPage() {
 
         (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
           ui.createComponent('product', {
-            id: '15348966555721',
-            node: document.getElementById('product-component-1750471943382'),
+            id: '15348972290121',
+            node: document.getElementById('product-component-1750473390538'),
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
     "product": {
@@ -531,38 +532,109 @@ export default function PayPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between">
               <div>
-                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">The Next Chapter 1-YEAR CONTAINER</h1>
+                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">TNC ESC Bundle</h1>
                 <p className="mb-6 text-[#46474c] text-lg font-montserrat">
-                  Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
+                  The complete transformation—personal and professional.
                 </p>
-                <p className="text-2xl font-semibold mb-8 text-[#46474c] font-playfair">Get Happy. Not Sober.</p>
+                <p className="mb-8 text-[#46474c] text-lg font-montserrat">
+                  This package is for the woman ready to change her relationship with alcohol, reclaim her emotional power, and guide others to do the same. You&apos;ll experience the full year of The Next Chapter for personal growth and recovery, plus the full Emotional Sobriety Coach Certification training to deepen your impact and step into leadership.
+                </p>
 
-                <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">THIS PACKAGE INCLUDES THE FOLLOWING</h2>
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">✨ What&apos;s Included:</h2>
+                  
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold mb-4 text-[#46474c] font-playfair">The Next Chapter: 1-Year Container</h3>
+                    <p className="mb-4 text-[#46474c] font-montserrat">Evidence-based brain training for high-achieving women ready to reduce their drinking by 80%—so alcohol feels like a pleasure, not a problem.</p>
+                    <p className="text-xl font-semibold mb-4 text-[#46474c] font-playfair">Get Happy. Not Sober.</p>
+                    
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Up to 3 live group coaching calls/week with Colleen</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Weekly small accountability group calls</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">300-page workbook shipped directly to you</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Private podcast feeds with on-the-go audio access (over 1500 hours!)</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Discord community platform for 7-day support</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Personalized onboarding, mindful drinking resources, weekly workshops and learning labs and lifetime access to the core curriculum</p>
+                      </div>
+                    </div>
+                  </div>
 
-                <FeatureItem 
-                  title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
-                />
-                <FeatureItem 
-                  title="Small Group Accountability calls"
-                  description="Meet with your small accountability group each week to share wins, work on skills and set goals for the following week."
-                />
-                <FeatureItem 
-                  title="The Next Chapter Resource Guide"
-                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
-                />
-                <FeatureItem 
-                  title="Audio-only content delivery via secret podcast feed"
-                  description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
-                />
-                <FeatureItem 
-                  title="Community Platform on Discord"
-                  description="(completely private and not connected to social media) provides you with support 7 days per week."
-                />
-                <FeatureItem 
-                  title="Bonus Resources"
-                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
-                />
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold mb-4 text-[#46474c] font-playfair">ESC Professional Certification (ESCC)</h3>
+                    <p className="mb-4 text-[#46474c] font-montserrat">Whether you plan to coach, lead, or simply support others with integrity—this track gives you structure, confidence, and professional-level tools.</p>
+                    
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">60 hours of coaching education + 25 hours practice coaching</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Weekly Discord discussion posts to promote communication skills</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Self-paced modules, live calls with group and partner work, audio lessons, Capstone project + Bonus Business Building Basics</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Assignments aligned with ICF competencies</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Submit 10 coaching calls for instructor feedback, pass ICF and ESC skill assessments, and earn your certification</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Learn to coach with emotional depth, nervous system literacy, and true transformation</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-bold mb-4 text-[#46474c] font-playfair">🌀 You&apos;ll Learn To:</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Build trust and regulate energy in any room</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Have hard conversations rooted in truth and safety</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Set boundaries, end people-pleasing, and shift internal narratives</p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                        <p className="text-[#46474c] font-montserrat">Co-create lasting change—first for yourself, then for others</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#f9f9f9] p-6 rounded-lg mb-8">
+                    <p className="text-lg font-semibold text-[#46474c] mb-2 font-playfair">This is more than training. It&apos;s your evolution.</p>
+                    <p className="text-[#46474c] font-montserrat">A year of transformation from the inside out—so you can rise fully resourced, emotionally anchored, and ready to lead.</p>
+                  </div>
+                </div>
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
@@ -570,12 +642,12 @@ export default function PayPage() {
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  <div id='product-component-1750471943382'></div>
+                  <div id='product-component-1750473390538'></div>
                 </div>
               </div>
             </div>
             <div className="lg:w-1/2 flex flex-col justify-between">
-              <Image src="/TNC1Year.webp" alt="TNC 1 Year Program" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
+              <Image src="/TNC1Year.webp" alt="TNC ESC Bundle Program" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
               <div className="sticky top-4">
                 <OrderSummary amount={amount} />
                 <Elements
@@ -608,4 +680,4 @@ export default function PayPage() {
       <Footer />
     </div>
   )
-}
+} 

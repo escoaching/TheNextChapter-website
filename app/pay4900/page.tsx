@@ -16,20 +16,20 @@ import MetaComponent from "../MetaComponent"
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
+// Shopify Buy Button types - third party library
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 const meta = {
   title: "The Next Chapter 1-YEAR CONTAINER",
   description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
+  pageUrl: "https://emotionalsobrietycoaching.com/pay4900"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
   throw new Error("NEXT_PUBLIC_STRIPE_PUBLIC_KEY is not defined")
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
-
-// Shopify Buy Button types - third party library
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 const CheckoutPage = ({ amount }: { amount: number }) => {
   const stripe = useStripe()
@@ -361,7 +361,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 5800
+  const amount = 4900
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -402,120 +402,120 @@ export default function PayPage() {
 
         (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
           ui.createComponent('product', {
-            id: '15348966555721',
-            node: document.getElementById('product-component-1750471943382'),
+            id: '15348967538761',
+            node: document.getElementById('product-component-1750472227643'),
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
-    "product": {
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "calc(25% - 20px)",
-            "margin-left": "20px",
-            "margin-bottom": "50px"
-          }
-        },
-        "button": {
-          "width": "100%",
-          "padding": "1rem",
-          "margin-top": "1.5rem",
-          "border-radius": "0.375rem",
-          "font-weight": "bold",
-          "color": "#fff8f7",
-          "background-color": "#f1c4c4",
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "buttonDestination": "checkout",
-      "contents": {
-        "img": false,
-        "title": false,
-        "price": false
-      },
-      "text": {
-        "button": "Checkout with Affirm"
-      }
-    },
-    "productSet": {
-      "styles": {
-        "products": {
-          "@media (min-width: 601px)": {
-            "margin-left": "-20px"
-          }
-        }
-      }
-    },
-    "modalProduct": {
-      "contents": {
-        "img": false,
-        "imgWithCarousel": true,
-        "button": false,
-        "buttonWithQuantity": true
-      },
-      "styles": {
-        "product": {
-          "@media (min-width: 601px)": {
-            "max-width": "100%",
-            "margin-left": "0px",
-            "margin-bottom": "0px"
-          }
-        },
-        "button": {
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          "background-color": "#f1c4c4",
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "text": {
-        "button": "Add to cart"
-      }
-    },
-    "option": {},
-    "cart": {
-      "styles": {
-        "button": {
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          "background-color": "#f1c4c4",
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      },
-      "text": {
-        "total": "Subtotal",
-        "notice": "",
-        "button": "Checkout"
-      }
-    },
-    "toggle": {
-      "styles": {
-        "toggle": {
-          "background-color": "#f1c4c4",
-          ":hover": {
-            "background-color": "#d9b0b0"
-          },
-          ":focus": {
-            "background-color": "#d9b0b0"
-          }
-        }
-      }
+              "product": {
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "calc(25% - 20px)",
+                      "margin-left": "20px",
+                      "margin-bottom": "50px"
+                    }
+                  },
+                  "button": {
+                    "width": "100%",
+                    "padding": "1rem",
+                    "margin-top": "1.5rem",
+                    "border-radius": "0.375rem",
+                    "font-weight": "bold",
+                    "color": "#fff8f7",
+                    "background-color": "#f1c4c4",
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "buttonDestination": "checkout",
+                "contents": {
+                  "img": false,
+                  "title": false,
+                  "price": false
+                },
+                "text": {
+                  "button": "Checkout with Affirm"
+                }
+              },
+              "productSet": {
+                "styles": {
+                  "products": {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "-20px"
+                    }
+                  }
+                }
+              },
+              "modalProduct": {
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true
+                },
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  "button": {
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    "background-color": "#f1c4c4",
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to cart"
+                }
+              },
+              "option": {},
+              "cart": {
+                "styles": {
+                  "button": {
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    "background-color": "#f1c4c4",
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                },
+                "text": {
+                  "total": "Subtotal",
+                  "notice": "",
+                  "button": "Checkout"
+                }
+              },
+              "toggle": {
+                "styles": {
+                  "toggle": {
+                    "background-color": "#f1c4c4",
+                    ":hover": {
+                      "background-color": "#d9b0b0"
+                    },
+                    ":focus": {
+                      "background-color": "#d9b0b0"
+                    }
+                  }
+                }
               }
             },
           });
         });
-    }
-  };
+      }
+    };
 
     loadShopifyBuyButton();
   }, [isMounted]);
@@ -570,7 +570,7 @@ export default function PayPage() {
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  <div id='product-component-1750471943382'></div>
+                  <div id='product-component-1750472227643'></div>
                 </div>
               </div>
             </div>
@@ -608,4 +608,4 @@ export default function PayPage() {
       <Footer />
     </div>
   )
-}
+} 

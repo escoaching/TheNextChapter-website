@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
-
 import {
   useStripe,
   useElements,
@@ -17,10 +16,10 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const meta = {
-  title: "The Next Chapter 1-YEAR CONTAINER",
-  description: "Evidence-based brain training for professional women who want to reduce their drinking by 80 percent.",
+  title: "Sacred Space Retreat - $3,500",
+  description: "Step into sacred space, surrounded by nature, where time slows down and your story begins to rewrite itself.",
   imageUrl: "https://emotionalsobrietycoaching.com/test.png",
-  pageUrl: "https://emotionalsobrietycoaching.com/pay9800"
+  pageUrl: "https://emotionalsobrietycoaching.com/retreat3500"
 }
 
 if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
@@ -28,7 +27,6 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
 
-// Shopify Buy Button types - third party library
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 const CheckoutPage = ({ amount }: { amount: number }) => {
@@ -103,7 +101,6 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     });
   
     if (error) {
-      // Handle specific error cases
       if (error.type === 'validation_error') {
         setErrorMessage(error.message);
       } else if (error.type === 'card_error') {
@@ -118,19 +115,16 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     if (paymentIntent) {
       switch (paymentIntent.status) {
         case 'succeeded':
-          // Payment was successful
           window.location.href = '/payment-success';
           break;
         case 'processing':
           setErrorMessage("Your payment is processing. Please wait...");
-          // Keep the loading state active while processing
           break;
         case 'requires_payment_method':
           setErrorMessage("Your payment was not successful, please try again.");
           setLoading(false);
           break;
         case 'requires_action':
-          // For payment methods that require additional steps (like Affirm)
           try {
             const { error: confirmError, paymentIntent: confirmedIntent } = await stripe.confirmPayment({
               clientSecret,
@@ -168,7 +162,6 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       setLoading(false);
     }
   };
-
   
   return (
     <>
@@ -185,7 +178,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
   
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-xl">
         <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">Payment Details</h2>
-  
+        
         <div className="mb-4">
           <label htmlFor="name" className="block text-lg font-medium text-[#46474c] mb-1 font-montserrat">Full Name</label>
           <input
@@ -197,7 +190,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#f1c4c4] focus:border-[#f1c4c4] text-lg font-montserrat"
           />
         </div>
-  
+        
         <div className="mb-4">
           <label htmlFor="email" className="block text-lg font-medium text-[#46474c] mb-1 font-montserrat">Email Address</label>
           <p className="text-base text-[#46474c] mb-1 font-montserrat">Please use the same email you have used for all other The Next Chapter communications.</p>
@@ -210,7 +203,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#f1c4c4] focus:border-[#f1c4c4] text-lg font-montserrat"
           />
         </div>
-  
+        
         <div className="mb-4">
           <label htmlFor="phoneNumber" className="block text-lg font-medium text-[#46474c] mb-1 font-montserrat">Phone Number</label>
           <input
@@ -303,22 +296,12 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
           disabled={!stripe || loading}
           className="w-full p-4 bg-[#f1c4c4] text-[#fff8f7] mt-6 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse hover:bg-[#46474c] transition-all transform hover:scale-105 shadow-lg"
         >
-          {!loading ? `Pay $${amount}` : "Processing..."}
+          {!loading ? `Pay $${amount.toLocaleString()}` : "Processing..."}
         </button>
       </form>
     </>
   );
 }
-
-const FeatureItem = ({ title, description }: { title: string; description: string }) => (
-  <div className="flex items-start space-x-3 mb-4">
-    <CheckCircle className="h-6 w-6 text-[#f1c4c4] flex-shrink-0 mt-1" />
-    <div>
-      <h3 className="font-bold text-lg text-[#46474c] mb-1 font-playfair">{title}</h3>
-      <p className="text-base text-[#46474c] font-montserrat">{description}</p>
-    </div>
-  </div>
-)
 
 const TransformationsGrid = () => (
   <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
@@ -361,7 +344,7 @@ const OrderSummary = ({ amount }: { amount: number }) => (
 )
 
 export default function PayPage() {
-  const amount = 5800
+  const amount = 3500
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -402,8 +385,8 @@ export default function PayPage() {
 
         (window as any).ShopifyBuy.UI.onReady(client).then(function (ui: any) {
           ui.createComponent('product', {
-            id: '15348966555721',
-            node: document.getElementById('product-component-1750471943382'),
+            id: '15348977434697',
+            node: document.getElementById('product-component-1750475427236'),
             moneyFormat: '%24%7B%7Bamount%7D%7D',
             options: {
     "product": {
@@ -527,42 +510,91 @@ export default function PayPage() {
       <Navbar key="navbar" />
       
       <main className="flex-grow mt-20">
-        <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12">
-            <div className="lg:w-1/2 flex flex-col justify-between">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-12">
+            <div className="w-full">
               <div>
-                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">The Next Chapter 1-YEAR CONTAINER</h1>
+                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">Sacred Space Retreat</h1>
                 <p className="mb-6 text-[#46474c] text-lg font-montserrat">
-                  Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
+                  Step into sacred space, surrounded by nature, where time slows down and your story begins to rewrite itself.
                 </p>
-                <p className="text-2xl font-semibold mb-8 text-[#46474c] font-playfair">Get Happy. Not Sober.</p>
+                <p className="mb-8 text-[#46474c] text-lg font-montserrat">
+                  This isn&apos;t your typical retreat. It&apos;s a soul-level reset. A quiet rebellion against the stories that have kept you small — and a full-bodied reclamation of the woman you&apos;re becoming.
+                </p>
+                <p className="mb-8 text-[#46474c] text-lg font-montserrat">
+                  Through powerful storytelling frameworks, guided embodiment, trauma release, and intention rituals, you&apos;ll transmute pain into purpose — and start living from your truth.
+                </p>
 
-                <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">THIS PACKAGE INCLUDES THE FOLLOWING</h2>
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold mb-6 text-[#46474c] font-playfair">✨ What You&apos;ll Experience ✨</h2>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">3 nights, 2.5 days of immersive transformation</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Architecturally stunning retreat center surrounded by natural beauty</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Daily chef-prepared, gourmet meals that nourish your body and soul</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">A custom retreat workbook to guide your inner work</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Practices that go deeper than words — breathwork, movement, meditation, fire rituals, TRE, and sound healing</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Personal coaching + group storytelling sessions led by Colleen</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Aroma Freedom + journaling practices to rewrite your inner dialogue</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Quiet, sacred moments just for you — no clocks, no pressure</p>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-[#f1c4c4] flex-shrink-0 mt-0.5" />
+                      <p className="text-[#46474c] font-montserrat">Connection, sisterhood, laughter, and late-night glow-ups (karaoke + dance party included 😉)</p>
+                    </div>
+                  </div>
 
-                <FeatureItem 
-                  title="LIVE Group Coaching Calls"
-                  description="Join up to 3 group coaching calls/week with Colleen where you get individual support, accountability AND community. You'll never miss a call as replays are available."
-                />
-                <FeatureItem 
-                  title="Small Group Accountability calls"
-                  description="Meet with your small accountability group each week to share wins, work on skills and set goals for the following week."
-                />
-                <FeatureItem 
-                  title="The Next Chapter Resource Guide"
-                  description="300-page workbook shipped directly to your house to guide you through the Accelerated Recovery Process©."
-                />
-                <FeatureItem 
-                  title="Audio-only content delivery via secret podcast feed"
-                  description="Learn as you move through your normal life...while you get ready for work or for bed and when you're driving, cooking, or tasking."
-                />
-                <FeatureItem 
-                  title="Community Platform on Discord"
-                  description="(completely private and not connected to social media) provides you with support 7 days per week."
-                />
-                <FeatureItem 
-                  title="Bonus Resources"
-                  description="Receive personalized onboarding support, schedule private coaching calls, access mindful drinking lessons, lifetime access to core skills course, and more."
-                />
+                  <div className="mt-8">
+                    <h3 className="text-2xl font-bold mb-6 text-[#46474c] font-playfair">💫 You&apos;ll Walk Away With:</h3>
+                    <div className="space-y-2">
+                      <p className="text-[#46474c] font-montserrat">A new story that reflects your growth — not your past.</p>
+                      <p className="text-[#46474c] font-montserrat">A deeper relationship with your future self, and your current power.</p>
+                      <p className="text-[#46474c] font-montserrat">A felt sense of peace, clarity, and confidence.</p>
+                      <p className="text-[#46474c] font-montserrat">Ritual tools + body-based practices to take home and return to.</p>
+                      <p className="text-[#46474c] font-montserrat">A community of women who see the real you — and cheer her on.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 bg-[#f9f9f9] p-6 rounded-lg">
+                    <h3 className="text-xl font-bold mb-4 text-[#46474c] font-playfair">Beyond the breakthroughs…</h3>
+                    <div className="space-y-2">
+                      <p className="text-[#46474c] font-montserrat">You&apos;ll sip Recess under the stars.</p>
+                      <p className="text-[#46474c] font-montserrat">Choose your special pen.</p>
+                      <p className="text-[#46474c] font-montserrat">Laugh until your belly hurts.</p>
+                      <p className="text-[#46474c] font-montserrat">Move, cry, release, be held.</p>
+                      <p className="text-[#46474c] font-montserrat">And when it&apos;s time to leave…</p>
+                      <p className="text-[#46474c] font-montserrat">You won&apos;t be the same woman who arrived.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 bg-[#fff8f7] p-6 rounded-lg border border-[#f1c4c4]">
+                    <p className="text-xl font-bold text-[#46474c] mb-3 font-playfair">&quot;Your old story got you here. Your new one takes you further.&quot;</p>
+                    <p className="text-lg text-[#46474c] font-montserrat">Let&apos;s write the next chapter together.</p>
+                  </div>
+                </div>
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
@@ -570,13 +602,12 @@ export default function PayPage() {
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
-                  <div id='product-component-1750471943382'></div>
+                  <div id='product-component-1750475427236'></div>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 flex flex-col justify-between">
-              <Image src="/TNC1Year.webp" alt="TNC 1 Year Program" width={800} height={800} className="w-full mb-8 rounded-lg shadow-xl transform hover:scale-105 transition-all" />
-              <div className="sticky top-4">
+            <div className="w-full mt-8">
+              <div className="max-w-2xl mx-auto">
                 <OrderSummary amount={amount} />
                 <Elements
                   stripe={stripePromise}
@@ -608,4 +639,4 @@ export default function PayPage() {
       <Footer />
     </div>
   )
-}
+} 
