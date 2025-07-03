@@ -64,94 +64,47 @@ export default function CheckoutOptionsPage() {
       <main className="flex-grow mt-20">
         <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">Choose Your Payment Option</h1>
+  
             <p className="text-xl text-[#46474c] font-montserrat max-w-3xl mx-auto">
-              Select the payment option that works best for you. All programs include our comprehensive support system and proven methodologies.
+              Select the products that best fits your needs.
             </p>
           </div>
 
           {/* Main TNC Program Options */}
           <PaymentSection title="The Next Chapter 1-Year Container">
             <PaymentButton
-              title="TNC Container"
-              description="Standard program pricing"
-              price="$3,000"
-              href="/pay3000"
+              title="TNC Unlimited"
+              description="Complete program package with unlimited 1:1 coaching"
+              price="$9,800"
+              href="/pay9800"
             />
             <PaymentButton
-              title="TNC Container"
-              description="Alternative pricing option"
-              price="$4,000"
-              href="/pay4000"
-            />
-            <PaymentButton
-              title="TNC Container"
-              description="Premium pricing option"
-              price="$4,900"
-              href="/pay4900"
-            />
-            <PaymentButton
-              title="TNC Container"
-              description="Enhanced program option"
-              price="$5,000"
-              href="/pay5000"
-            />
-            <PaymentButton
-              title="TNC Container"
-              description="Full program experience"
-              price="$5,800"
-              href="/pay5800"
-            />
-            <PaymentButton
-              title="TNC Container"
-              description="Premium program option"
-              price="$6,500"
-              href="/pay6500"
-            />
-            <PaymentButton
-              title="TNC Container"
-              description="Advanced program tier"
+              title="TNC Group +6"
+              description="Advanced program tier with 6 private coaching calls"
               price="$7,800"
               href="/pay7800"
             />
             <PaymentButton
-              title="TNC Container"
-              description="Complete program package"
-              price="$9,800"
-              href="/pay9800"
+              title="TNC Group +3"
+              description="Premium program option with 3 private coaching calls"
+              price="$6,500"
+              href="/pay6500"
             />
             <PaymentButton
-              title="TNC Container"
-              description="Main TNC Container"
-              price="$9,800"
-              href="/pay9800"
+              title="TNC Group"
+              description="Enhanced program option"
+              price="$5,000"
+              href="/pay5000"
             />
           </PaymentSection>
 
           {/* Renewal Options */}
           <PaymentSection title="Renewal Programs">
             <PaymentButton
-              title="Membership Renewal"
-              description="Continue your journey with ongoing support"
-              href="/membershiprenewal"
-            />
-            <PaymentButton
-              title="TNC Podcast Renewal"
+              title="TNC Renewal—Podcast Only"
               description="Stay connected to the work—on your terms"
               price="$1,500"
               href="/podcastrenewal"
-            />
-            <PaymentButton
-              title="TNC Podcast Renewal + Service Hours"
-              description="Podcast access plus additional service hours"
-              price="$1,000"
-              href="/podcastrenewal1000"
-            />
-            <PaymentButton
-              title="TNC Renewal"
-              description="Year 2 integration and deeper work"
-              price="$2,500"
-              href="/tncrenewal2500"
             />
             <PaymentButton
               title="TNC Renewal"
@@ -159,36 +112,42 @@ export default function CheckoutOptionsPage() {
               price="$3,500"
               href="/tncrenewal3500"
             />
+            <PaymentButton
+              title="TNC Renewal (with service discount)"
+              description="Podcast access plus additional service hours"
+              price="$1,000"
+              href="/podcastrenewal1000"
+            />
           </PaymentSection>
 
           {/* Specialty Programs */}
           <PaymentSection title="Specialty Programs">
             <PaymentButton
-              title="Embodiment Program"
-              description="Deepen your emotional resilience and become grounded presence"
-              price="$3,500"
-              href="/embodiment3500"
-            />
-            <PaymentButton
-              title="Embodiment Program"
+              title="ESC Embodiment Training"
               description="Advanced embodiment training"
               price="$6,000"
               href="/embodiment6000"
             />
             <PaymentButton
-              title="Coaching Certification"
-              description="Professional coaching certification program"
-              price="$6,700"
-              href="/coachingcertification6700"
+              title="ESC Embodiment Training (with service discount)"
+              description="Deepen your emotional resilience and become grounded presence"
+              price="$3,500"
+              href="/embodiment3500"
             />
             <PaymentButton
-              title="Coaching Certification"
+              title="ES Coach Certification"
               description="Complete professional certification with 60 hours education"
               price="$9,200"
               href="/coachingcertification9200"
             />
             <PaymentButton
-              title="TNC + ESC Bundle"
+              title="ES Coach Certification (with service discount)"
+              description="Professional coaching certification program"
+              price="$6,700"
+              href="/coachingcertification6700"
+            />
+            <PaymentButton
+              title="TNC + ES Coach Certification"
               description="Complete transformation package combining TNC 1-Year Container and ESC Professional Certification"
               price="$18,980"
               href="/tncescbundle"
@@ -198,28 +157,16 @@ export default function CheckoutOptionsPage() {
           {/* Retreat Options */}
           <PaymentSection title="Retreat Programs">
             <PaymentButton
-              title="Retreat Experience"
-              description="Transformative retreat experience"
-              price="$2,870"
-              href="/retreat2870"
-            />
-            <PaymentButton
-              title="Retreat Experience"
-              description="Enhanced retreat package"
-              price="$3,050"
-              href="/retreat3050"
-            />
-            <PaymentButton
-              title="Retreat Experience"
-              description="Premium retreat option"
-              price="$3,230"
-              href="/retreat3230"
-            />
-            <PaymentButton
-              title="Retreat Experience"
+              title="ESC Retreat"
               description="Complete retreat experience"
               price="$3,500"
               href="/retreat3500"
+            />
+            <PaymentButton
+              title="ESC Retreat (early bird discount)"
+              description="Early bird retreat discount"
+              price="$3,230"
+              href="/retreat3230"
             />
           </PaymentSection>
 

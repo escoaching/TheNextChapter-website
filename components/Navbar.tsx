@@ -19,6 +19,7 @@ export default function Navbar() {
     { href: '/about-TNC', label: 'Program' },
     { href: '/about-colleen', label: 'About' },
     { href: '/podcast', label: 'Podcast' },
+    { href: '/products', label: 'Products' },
     { href: 'https://emotionalsobrietycoaching.typeform.com/to/QbFjUKjL#source=website', label: 'Book Discovery Call', external: true },
   ]
 

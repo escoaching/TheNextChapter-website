@@ -487,7 +487,7 @@ export default function PayPage() {
           <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2 flex flex-col justify-between">
               <div>
-                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">The Next Chapter 1-YEAR CONTAINER</h1>
+                <h1 className="text-5xl font-bold mb-6 text-[#46474c] font-playfair">TNC Group</h1>
                 <p className="mb-6 text-[#46474c] text-lg font-montserrat">
                   Evidence-based brain training for professional women who want to reduce their drinking by 80 percent so that alcohol feels like a pleasure instead of a problem.
                 </p>
