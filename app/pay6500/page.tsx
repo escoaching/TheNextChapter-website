@@ -508,7 +508,7 @@ export default function PayPage() {
                 />
                 <FeatureItem 
                   title="Includes 3 private coaching calls"
-                  description="Access to 3 individual coaching sessions with Colleen for personalized support and guidance."
+                  description="Access to 3 individual coaching sessions for personalized support and guidance."
                 />
                 <FeatureItem 
                   title="Bonus Resources"
