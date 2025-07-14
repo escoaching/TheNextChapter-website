@@ -518,7 +518,7 @@ export default function PayPage() {
                 />
                 <FeatureItem 
                   title="Includes unlimited 1:1 coaching calls"
-                  description="Access to unlimited individual coaching sessions with Colleen for personalized support and guidance."
+                  description="Access to unlimited individual coaching sessions for personalized support and guidance."
                 />
                 <FeatureItem 
                   title="Bonus Resources"
