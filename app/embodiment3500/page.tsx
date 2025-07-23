@@ -593,7 +593,7 @@ export default function Embodiment3500Page() {
 
                 <div className="mt-12">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
-                  <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="6b765496-fa9a-4521-aa82-4dfe96332133" /> <input type = "image" src ="//content.authorize.net/images/buy-now-gold.gif" /> </form>
+                  <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="77891166-f638-45a7-9dcf-24895e0e5224" /> <input type = "image" src ="//content.authorize.net/images/buy-now-gold.gif" /> </form>
                 </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
