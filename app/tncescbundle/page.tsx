@@ -636,10 +636,6 @@ export default function PayPage() {
                   </div>
                 </div>
 
-                <div className="mt-12">
-                  <p className="text-lg text-[#46474c] mb-4 font-montserrat">If you&apos;d like to purchase with HSA/FSA click this button:</p>
-                  <form name="PrePage" method = "post" action = "https://Simplecheckout.authorize.net/payment/CatalogPayment.aspx"> <input type = "hidden" name = "LinkId" value ="115c472a-52db-46f3-b7cf-e8b36820888d" /> <input type = "image" src ="//content.authorize.net/images/buy-now-gold.gif" /> </form>
-                </div>
                 <div className="mt-8">
                   <p className="text-lg text-[#46474c] mb-4 font-montserrat">To checkout with Affirm, use the button below:</p>
                   <div id='product-component-1750473390538'></div>
